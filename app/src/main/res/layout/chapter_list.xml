@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/gamabar"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/title"
+        android:src="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrption"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:id="@+id/deskription"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="20sp"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/deskription"
+        android:id="@+id/title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumlah Chapter : "
+        android:textSize="20sp"
+        android:layout_below="@id/deskription"
+        android:id="@+id/jumlahChapter"
+        android:layout_marginLeft="200px"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chapter : "
+        android:textSize="20sp"
+        android:layout_below="@id/jumlahChapter"
+        android:id="@+id/chapter"
+        android:layout_marginLeft="200px"
+        />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinner_chapter"
+        android:layout_toRightOf="@+id/chapter"
+        android:layout_below="@id/jumlahChapter"/>
+
+
+    <Button
+        android:layout_width="100px"
+        android:layout_height="50px"
+        android:text="Baca"
+        android:textSize="20sp"
+        android:layout_below="@id/jumlahChapter"
+        android:layout_toRightOf="@+id/Spinner_chapter"
+        />
+
+</RelativeLayout>
