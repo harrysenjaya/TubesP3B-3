@@ -45,7 +45,7 @@
 //        }
 //
 //        ImageView imageView=convertView.findViewById(R.id.image_grid);
-//        TextView textView=convertView.findViewById(R.id.tv_gridItem);
+//        TextView textView=convertView.findViewById(R.id.title);
 //
 //        imageView.setImageResource(R.drawable.ic_launcher_background);
 //        textView.setText(manga[position].getNama());
