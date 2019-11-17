@@ -1,37 +1,51 @@
 package com.example.tubesp3b_3;
 
-public class Manga {
-    protected int id;
-    protected String Nama;
-    protected String gambar;
+import java.util.Date;
 
-    public Manga(int id, String nama, String gambar) {
+public class Manga {
+    private String image;
+    private String title;
+    private String id;
+    private String status;
+    private String category;
+    private Date last_chapter_date;
+    private int hits;
+
+    public Manga(String image, String title, String id, String status, String category, Date last_chapter_date, int hits) {
+        this.image = image;
+        this.title = title;
         this.id = id;
-        Nama = nama;
-        this.gambar = gambar;
+        this.status = status;
+        this.category = category;
+        this.last_chapter_date = last_chapter_date;
+        this.hits = hits;
     }
 
-    public int getId() {
+    public String getImage() {
+        return image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getStatus() {
+        return status;
     }
 
-    public String getNama() {
-        return Nama;
+    public String getCategory() {
+        return category;
     }
 
-    public void setNama(String nama) {
-        Nama = nama;
+    public Date getLast_chapter_date() {
+        return last_chapter_date;
     }
 
-    public String getGambar() {
-        return gambar;
-    }
-
-    public void setGambar(String gambar) {
-        this.gambar = gambar;
+    public int getHits() {
+        return hits;
     }
 }
