@@ -8,14 +8,15 @@ import android.widget.Toast;
 import android.widget.GridView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity implements IMainActivity{
-    GridView gridView;
-    Manga cek[];
-    ArrayList<Manga> manga;
+public class MainActivity extends AppCompatActivity {
+    MainFragment mainFragment;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +31,10 @@ public class MainActivity extends AppCompatActivity implements IMainActivity{
 //        }
 //        cek=duar;
 
-        gridView=findViewById(R.id.gridView);
-        PostCalculateTask postCalculateTask = new PostCalculateTask(this,this);
-        postCalculateTask.getMangaList();
+        this.mainFragment = MainFragment.newInstance("title");
+        this.fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction ft = this.fragmentManager.beginTransaction();
+        ft.add(R.id.container, this.mainFragment).commit();
 
 //        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 //
@@ -43,20 +45,6 @@ public class MainActivity extends AppCompatActivity implements IMainActivity{
 //            }
 //        });
 
-
-
     }
 
-    public void adapter(){
-
-    }
-
-    @Override
-    public void getMangaList(ArrayList<Manga> manga) {
-        Log.d("MANGA",manga.size()+"");
-
-        this.manga = manga;
-        gridAdapter adapter= new gridAdapter(this,this.manga);
-        gridView.setAdapter(adapter);
-    }
 }
