@@ -25,7 +25,6 @@ public class MainFragment extends Fragment implements IMainActivity {
     private Manga cek[];
     private ArrayList<Manga> manga;
 
-    protected IMainActivity listener;
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
 

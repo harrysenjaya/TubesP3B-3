@@ -9,6 +9,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -24,7 +26,6 @@ public class gridAdapter extends BaseAdapter {
     public gridAdapter(Context context, ArrayList<Manga> manga) {
         this.context = context;
         this.manga = manga;
-        Log.d("Bikin","ADAPTER");
     }
 
     @Override
@@ -44,7 +45,6 @@ public class gridAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.d("BIKIN","VIEW");
         if (inflater==null){
             inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
@@ -56,7 +56,9 @@ public class gridAdapter extends BaseAdapter {
         TextView title=convertView.findViewById(R.id.titlenya);
         TextView status = convertView.findViewById(R.id.statusnya);
         TextView lastChapterDate = convertView.findViewById(R.id.lastChapterDate);
-//        imageView.setImageResource("https://cdn.mangaeden.com/mangasimg/"+this.manga.get(position).getImage()));
+        if(this.manga.get(position).getImage() != null) {
+            Glide.with(convertView).load("https://cdn.mangaeden.com/mangasimg/" + this.manga.get(position).getImage()).into(imageView);
+        }
         title.setText(this.manga.get(position).getTitle());
         status.setText(this.manga.get(position).getStatus());
         Date date =this.manga.get(position).getLast_chapter_date();
