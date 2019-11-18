@@ -7,9 +7,9 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/gambar"
-        android:layout_centerInParent="true"
-        android:layout_above="@id/title"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:src="@color/colorAccent"/>
 
     <TextView
@@ -17,8 +17,9 @@
         android:layout_height="wrap_content"
         android:text="Description :"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="200px"
+        android:layout_below="@id/author"
         android:id="@+id/deskription"
         android:textStyle="bold"/>
 
@@ -27,10 +28,9 @@
         android:layout_height="wrap_content"
         android:text="Cantik,Lucu"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_centerInParent="true"
-        android:layout_toRightOf="@id/deskription"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="200px"
+        android:layout_below="@id/deskription"
         android:id="@+id/deskripsi"/>
 
     <TextView
@@ -40,8 +40,8 @@
         android:textSize="20sp"
         android:layout_marginLeft="200px"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:layout_above="@id/deskription"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/artist"
         android:id="@+id/author"
         />
 
@@ -51,9 +51,10 @@
         android:layout_toRightOf="@id/author"
         android:text="penulis"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_above="@id/deskripsi"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/artis"
         android:id="@+id/penulis"
         />
 
@@ -63,9 +64,10 @@
         android:text="Artist :"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
-        android:layout_above="@id/author"
+        android:layout_marginLeft="200px"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/judul"
         android:id="@+id/artist"
         />
 
@@ -74,33 +76,22 @@
         android:layout_height="wrap_content"
         android:text="IU/Irene/Minah"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_toRightOf="@id/artist"
-        android:layout_above="@id/penulis"
+        android:layout_below="@id/judul"
         android:id="@+id/artis"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Title :"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="200px"
-        android:layout_above="@id/artist"
-        android:id="@+id/title"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="Hotel Del Luna"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/gambar"
         android:textSize="20sp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/title"
-        android:layout_above="@id/artis"
         android:id="@+id/judul"/>
 
     <TextView
@@ -108,10 +99,10 @@
         android:layout_height="wrap_content"
         android:text="Status :"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="200px"
         android:textStyle="bold"
-        android:layout_below="@id/deskription"
+        android:layout_below="@id/deskripsi"
         android:id="@+id/status"/>
 
     <TextView
@@ -120,9 +111,9 @@
         android:text="boga aink"
         android:textSize="20sp"
         android:layout_toRightOf="@id/status"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_below="@id/deskription"
+        android:layout_below="@id/deskripsi"
         android:id="@+id/setatus"/>
 
     <TextView
@@ -130,9 +121,9 @@
         android:layout_height="wrap_content"
         android:text="Category :"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:textStyle="bold"
-        android:layout_centerInParent="true"
+        android:layout_marginLeft="200px"
         android:layout_below="@+id/status"
         android:id="@+id/category"/>
 
@@ -142,7 +133,7 @@
         android:text="dancer/singer"
         android:textSize="20sp"
         android:layout_toRightOf="@id/category"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_below="@id/setatus"
         android:id="@+id/kategori"/>
@@ -152,7 +143,7 @@
         android:layout_height="wrap_content"
         android:text="Created :"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="200px"
         android:textStyle="bold"
         android:layout_below="@+id/category"
@@ -164,7 +155,7 @@
         android:text="YB Enterteiment"
         android:textSize="20sp"
         android:layout_toRightOf="@id/created"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:layout_below="@id/kategori"
         android:id="@+id/dibuat"/>
@@ -175,8 +166,8 @@
         android:text="Last Chapter Date :"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="200px"
         android:layout_below="@id/created"
         android:id="@+id/date"/>
 
@@ -185,20 +176,19 @@
         android:layout_height="wrap_content"
         android:text="34"
         android:textSize="20sp"
-        android:layout_toRightOf="@id/date"
-        android:layout_below="@id/dibuat"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_below="@id/date"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="200px"
         android:id="@+id/total"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Jumlah Chapter : "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_below="@id/date"
+        android:layout_below="@id/total"
         android:id="@+id/jumlahChapter"
         android:layout_marginLeft="200px"
         />
@@ -210,7 +200,7 @@
         android:textSize="20sp"
         android:layout_toRightOf="@id/jumlahChapter"
         android:layout_below="@id/total"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/jumlah"/>
 
@@ -222,8 +212,8 @@
         android:layout_below="@id/jumlahChapter"
         android:textStyle="bold"
         android:id="@+id/chapter"
-        android:layout_marginTop="15dp"
-        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="200px"
         />
 
     <Spinner
@@ -231,7 +221,7 @@
         android:layout_height="100px"
         android:id="@+id/Spinner_chapter"
         android:layout_toRightOf="@+id/chapter"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/jumlahChapter"/>
 
 
@@ -240,7 +230,7 @@
         android:layout_height="100px"
         android:text="Baca"
         android:textSize="10sp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/jumlahChapter"
         android:layout_toRightOf="@+id/Spinner_chapter"
         />

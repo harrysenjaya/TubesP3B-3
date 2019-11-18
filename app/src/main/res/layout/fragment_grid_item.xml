@@ -14,11 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hotel Del Luna"
-        android:textSize="22sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/image_grid"
-        android:layout_marginLeft="5dp"
+        android:textStyle="italic"
         android:id="@+id/titlenya"/>
 
     <TextView
@@ -30,13 +30,13 @@
         android:layout_below="@id/titlenya"
         android:id="@+id/status"
         android:textStyle="bold"
-        android:textSize="22sp"/>
+        android:textSize="15sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Boga Aink"
-        android:textSize="22sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_toRightOf="@+id/status"
@@ -52,13 +52,13 @@
         android:layout_below="@id/status"
         android:textStyle="bold"
         android:id="@+id/category"
-        android:textSize="22sp"/>
+        android:textSize="15sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Romance"
-        android:textSize="22sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_below="@id/category"
@@ -73,17 +73,16 @@
         android:layout_below="@id/kategorinya"
         android:textStyle="bold"
         android:id="@+id/chapter"
-        android:textSize="22sp"/>
+        android:textSize="15sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Januari"
         android:id="@+id/lastChapterDate"
-        android:textSize="22sp"
+        android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_below="@id/chapter"
-        android:layout_marginLeft="5dp"/>
+        android:layout_below="@id/chapter" />
 
 </RelativeLayout>
