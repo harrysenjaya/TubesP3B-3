@@ -15,11 +15,14 @@ public class Manga {
         this.image = image;
         this.title = title;
         this.id = id;
-        if(status.equals("1")) {
-            this.status = "Complete";
+        if(status.equals("2")) {
+            this.status = "Completed";
         }
-        else{
+        else if(status.equals("1")){
             this.status = "Ongoing";
+        }
+        else if(status.equals("0")){
+            this.status = "Suspended";
         }
         this.category = category;
         this.last_chapter_date = last_chapter_date;
