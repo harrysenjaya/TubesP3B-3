@@ -12,6 +12,7 @@ import android.widget.TextView;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 public class gridAdapter extends BaseAdapter {
@@ -54,15 +55,19 @@ public class gridAdapter extends BaseAdapter {
         ImageView imageView=convertView.findViewById(R.id.image_grid);
         TextView title=convertView.findViewById(R.id.titlenya);
         TextView status = convertView.findViewById(R.id.statusnya);
-        TextView category = convertView.findViewById(R.id.kategorinya);
         TextView lastChapterDate = convertView.findViewById(R.id.lastChapterDate);
 //        imageView.setImageResource("https://cdn.mangaeden.com/mangasimg/"+this.manga.get(position).getImage()));
         title.setText(this.manga.get(position).getTitle());
         status.setText(this.manga.get(position).getStatus());
-        category.setText(this.manga.get(position).getCategory());
-//        Date date =this.manga.get(position).getLast_chapter_date();
-//        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
-        lastChapterDate.setText(this.manga.get(position).getLast_chapter_date()+"");
+        Date date =this.manga.get(position).getLast_chapter_date();
+        if(date!=null) {
+                String temp = date+"";
+                String[] tempsplit = temp.split(" ");
+                lastChapterDate.setText(tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5]);
+        }
+        else{
+            lastChapterDate.setText("-");
+        }
 
         return convertView;
     }

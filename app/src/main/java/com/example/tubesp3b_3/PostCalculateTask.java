@@ -51,8 +51,7 @@ public class PostCalculateTask {
                         if(mangaJSON.has("ld") && mangaJSON.getString("ld")!= null) {
                             double tempdate = Double.parseDouble(mangaJSON.getString("ld"));
                             long date = (long)tempdate;
-                            last_chapter_date = new Date(date);
-                            Log.d("DATE",last_chapter_date+"");
+                            last_chapter_date = new Date(date*1000);
                         }
                         int hits = Integer.parseInt(mangaJSON.getString("h"));
                         Manga manga = new Manga(image,title,id,status,category,last_chapter_date,hits);
