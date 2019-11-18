@@ -8,7 +8,9 @@
         android:id="@+id/image_grid"
         android:layout_width="150dp"
         android:layout_height="200dp"
-        app:srcCompat="@color/colorAccent" />
+        app:srcCompat="@color/colorAccent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,6 +21,7 @@
         android:layout_marginBottom="10dp"
         android:layout_below="@id/image_grid"
         android:textStyle="italic"
+        android:layout_marginLeft="25dp"
         android:id="@+id/titlenya"/>
 
     <TextView
@@ -28,6 +31,7 @@
         android:layout_marginBottom="5dp"
         android:text="Status : "
         android:layout_below="@id/titlenya"
+        android:layout_marginLeft="25dp"
         android:id="@+id/status"
         android:textStyle="bold"
         android:textSize="15sp"/>
@@ -37,6 +41,7 @@
         android:layout_height="wrap_content"
         android:text="Boga Aink"
         android:textSize="15sp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_toRightOf="@+id/status"
@@ -48,29 +53,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Category :  "
-        android:layout_below="@id/status"
-        android:textStyle="bold"
-        android:id="@+id/category"
-        android:textSize="15sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Romance"
-        android:textSize="15sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_below="@id/category"
-        android:id="@+id/kategorinya"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="25dp"
         android:text="Last Chapter Date :"
-        android:layout_below="@id/kategorinya"
+        android:layout_below="@id/status"
         android:textStyle="bold"
         android:id="@+id/chapter"
         android:textSize="15sp"/>
@@ -78,11 +63,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
         android:text="Januari"
         android:id="@+id/lastChapterDate"
         android:textSize="15sp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="20dp"
         android:layout_below="@id/chapter" />
 
 </RelativeLayout>
