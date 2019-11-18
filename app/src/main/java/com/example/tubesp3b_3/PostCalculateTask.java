@@ -52,12 +52,14 @@ public class PostCalculateTask {
                             double tempdate = Double.parseDouble(mangaJSON.getString("ld"));
                             long date = (long)tempdate;
                             last_chapter_date = new Date(date);
+                            Log.d("DATE",last_chapter_date+"");
                         }
                         int hits = Integer.parseInt(mangaJSON.getString("h"));
                         Manga manga = new Manga(image,title,id,status,category,last_chapter_date,hits);
                         mangaList.add(manga);
                     }
                     Log.d("LIST",mangaList.size()+"");
+                    sendData(mangaList);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -71,5 +73,11 @@ public class PostCalculateTask {
         queue.add(jsonObjectRequest);
 
     }
+
+    public void sendData(ArrayList<Manga> manga){
+        this.ui.getMangaList(manga);
+
+    }
+
 
 }

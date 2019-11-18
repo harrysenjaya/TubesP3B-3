@@ -15,36 +15,48 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements IMainActivity{
     GridView gridView;
     Manga cek[];
-
+    ArrayList<Manga> manga;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//
-//        Manga[] duar=new Manga[100];
+
+
+//        Manga[] duar=new Manga[manga.size()];
 //        for(int i=0;i<100;i++){
 //            Manga boom=new Manga(i,""+i,""+i);
 //            duar[i]=boom;
 //        }
 //        cek=duar;
-//        gridView=findViewById(R.id.gridView);
-//
-//        gridAdapter adapter= new gridAdapter(MainActivity.this,this.cek);
-//        gridView.setAdapter(adapter);
-//
-//
+
+        gridView=findViewById(R.id.gridView);
+        PostCalculateTask postCalculateTask = new PostCalculateTask(this,this);
+        postCalculateTask.getMangaList();
+
 //        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 //
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Toast.makeText(getApplicationContext(),"you clickked"+ cek[+position].getNama(),Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(),"you clickked"+ cek[+position].get(),Toast.LENGTH_LONG).show();
 //
 //            }
 //        });
 
 
-        PostCalculateTask postCalculateTask = new PostCalculateTask(this,this);
-        postCalculateTask.getMangaList();
+
+    }
+
+    public void adapter(){
+
+    }
+
+    @Override
+    public void getMangaList(ArrayList<Manga> manga) {
+        Log.d("MANGA",manga.size()+"");
+
+        this.manga = manga;
+        gridAdapter adapter= new gridAdapter(this,this.manga);
+        gridView.setAdapter(adapter);
     }
 }
