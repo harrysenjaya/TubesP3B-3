@@ -56,7 +56,7 @@ public class gridAdapter extends BaseAdapter {
         TextView title=convertView.findViewById(R.id.titlenya);
         TextView status = convertView.findViewById(R.id.statusnya);
         TextView lastChapterDate = convertView.findViewById(R.id.lastChapterDate);
-        if(this.manga.get(position).getImage() != null) {
+        if(this.manga.get(position).getImage() != null && !this.manga.get(position).getImage().equals("") && !this.manga.get(position).getImage().equals("null")) {
             Glide.with(convertView).load("https://cdn.mangaeden.com/mangasimg/" + this.manga.get(position).getImage()).into(imageView);
         }
         else{
