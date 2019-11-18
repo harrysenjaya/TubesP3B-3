@@ -59,6 +59,9 @@ public class gridAdapter extends BaseAdapter {
         if(this.manga.get(position).getImage() != null) {
             Glide.with(convertView).load("https://cdn.mangaeden.com/mangasimg/" + this.manga.get(position).getImage()).into(imageView);
         }
+        else{
+            imageView.setImageResource(R.drawable.noimage);
+        }
         title.setText(this.manga.get(position).getTitle());
         status.setText(this.manga.get(position).getStatus());
         Date date =this.manga.get(position).getLast_chapter_date();
