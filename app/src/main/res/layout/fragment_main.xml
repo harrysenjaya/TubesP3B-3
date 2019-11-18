@@ -13,6 +13,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="20dp"
         android:numColumns="2">
+
     </GridView>
 
 </RelativeLayout>
