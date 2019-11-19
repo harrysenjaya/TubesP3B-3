@@ -47,6 +47,7 @@ public class PostCalculateTask {
                         String id = mangaJSON.getString("i");
                         String status = mangaJSON.getString("s");
                         String category = mangaJSON.getString("c");
+                        Log.d("CATEGORY",category);
                         Date last_chapter_date = null;
                         if(mangaJSON.has("ld") && mangaJSON.getString("ld")!= null) {
                             double tempdate = Double.parseDouble(mangaJSON.getString("ld"));

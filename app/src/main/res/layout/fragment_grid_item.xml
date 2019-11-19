@@ -13,8 +13,8 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:text="Hotel Del Luna"
         android:textSize="15sp"
         android:layout_marginTop="10dp"
