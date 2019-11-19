@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -39,6 +41,7 @@ public class MainFragment extends Fragment implements IMainActivity {
 
         return fragment;
     }
+
 //  public void setPresenter(MainPresenter presenter) {
 //
 //  }
@@ -49,6 +52,15 @@ public class MainFragment extends Fragment implements IMainActivity {
         ButterKnife.bind(this, view);
         fragmentManager = this.getActivity().getSupportFragmentManager();
         ft = fragmentManager.beginTransaction();
+
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getActivity().getApplicationContext(), "you clicked"+ cek[+position].getId(), Toast.LENGTH_SHORT).show();
+            }
+            });
+
 
         PostCalculateTask postCalculateTask = new PostCalculateTask( this.getActivity(), this);
         postCalculateTask.getMangaList();

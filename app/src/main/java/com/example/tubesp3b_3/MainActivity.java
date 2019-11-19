@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     MainFragment mainFragment;
+    DetailFragment detailFragment;
     FragmentManager fragmentManager;
 
     @Override
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 //        cek=duar;
 
         this.mainFragment = MainFragment.newInstance("title");
+        //this.detailFragment = DetailFragment.newInstance("title");
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.container, this.mainFragment).commit();
