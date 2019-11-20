@@ -6,19 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <GridView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/gridView"
-        android:layout_marginTop="50dp"
-        android:numColumns="2"/>
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/container"
-        >
-    </FrameLayout>
+        />
 
 
 </RelativeLayout>

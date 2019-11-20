@@ -14,10 +14,13 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentListener {
     MainFragment mainFragment;
     DetailFragment detailFragment;
     FragmentManager fragmentManager;
+    DetailFragment detail;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 //        cek=duar;
 
         this.mainFragment = MainFragment.newInstance("title");
+        detail=DetailFragment.newInstance("DetailFragment");
         //this.detailFragment = DetailFragment.newInstance("title");
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
@@ -47,6 +51,36 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
+    }
+
+
+
+    @Override
+    public void changePage(int page){
+        FragmentTransaction ft = this.fragmentManager.beginTransaction();
+        if(page==1){
+            if(this.mainFragment.isAdded()){
+                ft.show(this.mainFragment);
+            }
+            else{
+                ft.add(R.id.container,this.mainFragment);
+            }
+            if(this.detail.isAdded()){
+                ft.hide(this.detail);
+            }
+        }
+        else if(page==2){
+            if(this.detail.isAdded()){
+                ft.show(this.detail);
+            }
+            else{
+                ft.add(R.id.container,this.detail).addToBackStack(null);
+            }
+            if(this.mainFragment.isAdded()){
+                ft.hide(this.mainFragment);
+            }
+        }
+        ft.commit();
     }
 
 }

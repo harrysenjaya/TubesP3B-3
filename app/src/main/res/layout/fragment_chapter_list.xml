@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -32,6 +34,26 @@
         android:layout_marginLeft="200px"
         android:layout_below="@id/deskription"
         android:id="@+id/deskripsi"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantik,Lucu"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="200px"
+        android:layout_below="@id/deskripsi"
+        android:id="@+id/deskripsi2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantik,Lucu"
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="200px"
+        android:layout_below="@id/deskripsi2"
+        android:id="@+id/deskripsi3"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -102,7 +124,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="200px"
         android:textStyle="bold"
-        android:layout_below="@id/deskripsi"
+        android:layout_below="@id/deskripsi3"
         android:id="@+id/status"/>
 
     <TextView
@@ -113,7 +135,7 @@
         android:layout_toRightOf="@id/status"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_below="@id/deskripsi"
+        android:layout_below="@id/deskripsi3"
         android:id="@+id/setatus"/>
 
     <TextView
@@ -217,8 +239,8 @@
         />
 
     <Spinner
-        android:layout_width="150px"
-        android:layout_height="100px"
+        android:layout_width="250px"
+        android:layout_height="150px"
         android:id="@+id/Spinner_chapter"
         android:layout_toRightOf="@+id/chapter"
         android:layout_marginBottom="10dp"
@@ -235,5 +257,5 @@
         android:layout_toRightOf="@+id/Spinner_chapter"
         android:id="@+id/btnChapter"
         />
-
 </RelativeLayout>
+</ScrollView>

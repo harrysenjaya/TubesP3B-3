@@ -29,6 +29,7 @@ public class MainFragment extends Fragment implements IMainActivity {
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
+    public FragmentListener listener;
 
     public MainFragment() {
 
@@ -48,16 +49,18 @@ public class MainFragment extends Fragment implements IMainActivity {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, view);
         fragmentManager = this.getActivity().getSupportFragmentManager();
         ft = fragmentManager.beginTransaction();
+
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
             @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity().getApplicationContext(), "you clicked"+ cek[+position].getId(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(view.getContext(), "you clicked"+ cek[+position].getId(), Toast.LENGTH_SHORT).show();
+                listener.changePage(2);
             }
             });
 
@@ -69,6 +72,16 @@ public class MainFragment extends Fragment implements IMainActivity {
 
     public void adapter() {
 
+    }
+
+    public void onAttach(Context context){
+        super.onAttach(context);
+        if(context instanceof FragmentListener){
+            this.listener=(FragmentListener) context;
+        }
+        else {
+            throw new ClassCastException(context.toString()+"must implement FragmentListener");
+        }
     }
 
 

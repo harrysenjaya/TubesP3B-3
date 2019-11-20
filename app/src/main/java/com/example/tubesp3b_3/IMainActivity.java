@@ -4,4 +4,5 @@ import java.util.ArrayList;
 
 public interface IMainActivity {
     void getMangaList(ArrayList<Manga> manga);
+
 }
