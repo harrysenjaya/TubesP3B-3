@@ -7,11 +7,10 @@ public class Manga {
     private String title;
     private String id;
     private String status;
-    private String category;
     private Date last_chapter_date;
     private int hits;
 
-    public Manga(String image, String title, String id, String status, String category, Date last_chapter_date, int hits) {
+    public Manga(String image, String title, String id, String status , Date last_chapter_date, int hits) {
         this.image = image;
         this.title = title;
         this.id = id;
@@ -24,7 +23,6 @@ public class Manga {
         else if(status.equals("0")){
             this.status = "Suspended";
         }
-        this.category = category;
         this.last_chapter_date = last_chapter_date;
         this.hits = hits;
     }
@@ -43,10 +41,6 @@ public class Manga {
 
     public String getStatus() {
         return status;
-    }
-
-    public String getCategory() {
-        return category;
     }
 
     public Date getLast_chapter_date() {

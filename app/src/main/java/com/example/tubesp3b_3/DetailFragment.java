@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.bumptech.glide.Glide;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -83,23 +85,22 @@ public class DetailFragment extends Fragment {
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
-
-    protected IMainActivity iMainActivity;
+    private Presenter presenter;
 
     public DetailFragment(){
 
     }
 
-    public static DetailFragment newInstance(String title, IMainActivity iMainActivity){
+    public static DetailFragment newInstance(String title, Presenter presenter){
         DetailFragment fragment = new DetailFragment();
         Bundle args = new Bundle();
         args.putString("title", title);
-        fragment.setiMainActivity(iMainActivity);
+        fragment.setPresenter(presenter);
         return fragment;
     }
 
-    public void setiMainActivity(IMainActivity iMainActivity){
-        this.iMainActivity = iMainActivity;
+    public void setPresenter(Presenter presenter) {
+        this.presenter = presenter;
     }
 
     @Override
@@ -108,13 +109,17 @@ public class DetailFragment extends Fragment {
         ButterKnife.bind(this, view);
         fragmentManager = this.getActivity().getSupportFragmentManager();
         ft = fragmentManager.beginTransaction();
-        API api = new API( this.getContext(), this.iMainActivity);
-//        api.getMangaDetail();
-
         return view;
     }
 
-    public void create(MangaInfo manga){
+    public void Create(MangaInfo manga){
+        if(!manga.getImage().equals("")) {
+            Glide.with(this).load("https://cdn.mangaeden.com/mangasimg/" + manga.getImage()).into(gambar);
+        }
+        else{
+            gambar.setImageResource(R.drawable.noimage);
+        }
         this.judul.setText(manga.getTitle());
+
     }
 }

@@ -9,7 +9,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,19 +16,19 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-
-public class API {
+public class Presenter {
+    private IMainActivity iMainActivity;
+    private Context context;
     protected final String BASE_URL = "https://www.mangaeden.com/api/";
-    protected IMainActivity ui;
-    protected Context context;
-    protected Gson gson;
 
-    public API(Context context, IMainActivity ui){
+    public Presenter(IMainActivity iMainActivity, Context context){
+        this.iMainActivity = iMainActivity;
         this.context = context;
-        this.ui = ui;
-        this.gson = new Gson();
+    }
+
+    public void changePage(int id){
+        this.iMainActivity.changePage(id);
     }
 
     public void getMangaList(){
@@ -43,23 +42,23 @@ public class API {
                     JSONArray arrayManga = response.getJSONArray("manga");
                     for(int i = 0 ; i<arrayManga.length(); i++){
                         JSONObject mangaJSON = arrayManga.getJSONObject(i);
-                        String image = mangaJSON.getString("im");
+                        String image = "";
+                        if(mangaJSON.has("im") && mangaJSON.getString("im")!= null && !mangaJSON.getString("im").equals("null")) {
+                            image = mangaJSON.getString("im");
+                        }
                         String title = mangaJSON.getString("t");
                         String id = mangaJSON.getString("i");
                         String status = mangaJSON.getString("s");
-                        String category = mangaJSON.getString("c");
-                        Log.d("CATEGORY",category);
                         Date last_chapter_date = null;
-                        if(mangaJSON.has("ld") && mangaJSON.getString("ld")!= null) {
+                        if(mangaJSON.has("ld") && mangaJSON.getString("ld")!= null && !mangaJSON.getString("ld").equals("null")) {
                             double tempdate = Double.parseDouble(mangaJSON.getString("ld"));
                             long date = (long)tempdate;
                             last_chapter_date = new Date(date*1000);
                         }
                         int hits = Integer.parseInt(mangaJSON.getString("h"));
-                        Manga manga = new Manga(image,title,id,status,category,last_chapter_date,hits);
+                        Manga manga = new Manga(image,title,id,status,last_chapter_date,hits);
                         mangaList.add(manga);
                     }
-                    Log.d("LIST",mangaList.size()+"");
                     sendMangaList(mangaList);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -75,29 +74,42 @@ public class API {
 
     }
 
-    public void getMangaDetail(String id){
+    public void getMangaInfo(String id){
         RequestQueue queue = Volley.newRequestQueue(context);
         String url =BASE_URL+"manga/"+id;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url,null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                        JSONObject mangaJSON = response;
-                        String image = mangaJSON.getString("image");
-                        String title = mangaJSON.getString("title");
-                        String artist = mangaJSON.getString("artist");
-                        String author = mangaJSON.getString("author");
-                        String desc = mangaJSON.getString("description");
-                        String status = mangaJSON.getString("status");
-                        String category = mangaJSON.getString("categories");
-                        Date last_chapter_date = null;
-                        if(mangaJSON.has("last_chapter_date") && mangaJSON.getString("last_chapter_date")!= null) {
-                            double tempdate = Double.parseDouble(mangaJSON.getString("last_chapter_date"));
-                            long date = (long)tempdate;
-                            last_chapter_date = new Date(date*1000);
+                    JSONObject mangaJSON = response;
+                    String image = "";
+                    if(mangaJSON.has("image") && mangaJSON.getString("image")!= null && !mangaJSON.getString("image").equals("null")) {
+                        image = mangaJSON.getString("image");
+                    }
+                    String title = mangaJSON.getString("title");
+                    String artist = mangaJSON.getString("artist");
+                    String author = mangaJSON.getString("author");
+                    String desc = mangaJSON.getString("description");
+                    String status = mangaJSON.getString("status");
+                    JSONArray arrayCategory = mangaJSON.getJSONArray("categories");
+                    String category = null;
+                    for(int i = 0 ; i< arrayCategory.length();i++){
+                        if(i== arrayCategory.length()-1){
+                            category+=arrayCategory.getString(i);
                         }
-                        Date created = null;
-                    if(mangaJSON.has("created") && mangaJSON.getString("created")!= null) {
+                        else {
+                            category += arrayCategory.getString(i) + ", ";
+                        }
+                    }
+
+                    Date last_chapter_date = null;
+                    if(mangaJSON.has("last_chapter_date") && mangaJSON.getString("last_chapter_date")!= null && !mangaJSON.getString("last_chapter_date").equals("null")) {
+                        double tempdate = Double.parseDouble(mangaJSON.getString("last_chapter_date"));
+                        long date = (long)tempdate;
+                        last_chapter_date = new Date(date*1000);
+                    }
+                    Date created = null;
+                    if(mangaJSON.has("created") && mangaJSON.getString("created")!= null && !mangaJSON.getString("created").equals("null")) {
                         double tempdate = Double.parseDouble(mangaJSON.getString("created"));
                         long date = (long)tempdate;
                         created = new Date(date*1000);
@@ -115,12 +127,10 @@ public class API {
                         chapterDate = new Date(date*1000);
                         String chapterTitle = chapter.getString(2);
                         String id = chapter.getString(3);
-
                         Chapter tempChapter = new Chapter(chapterNumber,chapterDate,title,id );
-
                         chapters.add(tempChapter);
                     }
-                        MangaInfo mangaInfo = new MangaInfo(image, title, artist, author, desc, status, category, created, last_chapter_date, chapters);
+                    MangaInfo mangaInfo = new MangaInfo(image, title, artist, author, desc, status, category, created, last_chapter_date, chapters);
                     sendMangaInfo(mangaInfo);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -136,11 +146,11 @@ public class API {
     }
 
     public void sendMangaList(ArrayList<Manga> manga){
-        this.ui.getMangaList(manga);
+        this.iMainActivity.getMangaList(manga);
     }
 
     public void sendMangaInfo(MangaInfo manga){
-        this.ui.getMangaInfo(manga);
+        this.iMainActivity.getMangaInfo(manga);
     }
 
 

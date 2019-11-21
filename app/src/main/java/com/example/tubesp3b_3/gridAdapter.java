@@ -17,13 +17,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-public class gridAdapter extends BaseAdapter {
+public class GridAdapter extends BaseAdapter {
 
     protected Context context;
     protected ArrayList<Manga> manga;
     protected LayoutInflater inflater;
 
-    public gridAdapter(Context context, ArrayList<Manga> manga) {
+    public GridAdapter(Context context, ArrayList<Manga> manga) {
         this.context = context;
         this.manga = manga;
     }
@@ -56,7 +56,7 @@ public class gridAdapter extends BaseAdapter {
         TextView title=convertView.findViewById(R.id.titlenya);
         TextView status = convertView.findViewById(R.id.statusnya);
         TextView lastChapterDate = convertView.findViewById(R.id.lastChapterDate);
-        if(this.manga.get(position).getImage() != null && !this.manga.get(position).getImage().equals("") && !this.manga.get(position).getImage().equals("null")) {
+        if(!this.manga.get(position).getImage().equals("")) {
             Glide.with(convertView).load("https://cdn.mangaeden.com/mangasimg/" + this.manga.get(position).getImage()).into(imageView);
         }
         else{
