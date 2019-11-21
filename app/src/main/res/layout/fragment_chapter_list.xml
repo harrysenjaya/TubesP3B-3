@@ -27,33 +27,13 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:text="Cantik,Lucu"
         android:textSize="20sp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="200px"
         android:layout_below="@id/deskription"
         android:id="@+id/deskripsi"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cantik,Lucu"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:layout_below="@id/deskripsi"
-        android:id="@+id/deskripsi2"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cantik,Lucu"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:layout_below="@id/deskripsi2"
-        android:id="@+id/deskripsi3"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -124,7 +104,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="200px"
         android:textStyle="bold"
-        android:layout_below="@id/deskripsi3"
+        android:layout_below="@id/deskripsi"
         android:id="@+id/status"/>
 
     <TextView
@@ -135,7 +115,7 @@
         android:layout_toRightOf="@id/status"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_below="@id/deskripsi3"
+        android:layout_below="@id/deskripsi"
         android:id="@+id/setatus"/>
 
     <TextView
