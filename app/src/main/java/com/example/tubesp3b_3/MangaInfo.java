@@ -1,5 +1,6 @@
 package com.example.tubesp3b_3;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -7,9 +8,9 @@ public class MangaInfo {
 
     private String image, title, artist, author, desc, status, category;
     private Date created, last_chapter_date;
-    private String[] chapter;
+    private ArrayList<Chapter> chapter;
 
-    public MangaInfo(String image, String title, String artist, String author, String desc, String status, String category, Date created, Date last_chapter_date, String[] chapter) {
+    public MangaInfo(String image, String title, String artist, String author, String desc, String status, String category, Date created, Date last_chapter_date, ArrayList<Chapter> chapter) {
         this.image = image;
         this.title = title;
         this.artist = artist;
@@ -58,7 +59,7 @@ public class MangaInfo {
         return last_chapter_date;
     }
 
-    public String[] getChapter() {
+    public ArrayList<Chapter> getChapter() {
         return chapter;
     }
 }

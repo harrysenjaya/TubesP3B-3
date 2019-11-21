@@ -84,15 +84,22 @@ public class DetailFragment extends Fragment {
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
 
+    protected IMainActivity iMainActivity;
+
     public DetailFragment(){
 
     }
 
-    public static DetailFragment newInstance(String title){
+    public static DetailFragment newInstance(String title, IMainActivity iMainActivity){
         DetailFragment fragment = new DetailFragment();
         Bundle args = new Bundle();
         args.putString("title", title);
+        fragment.setiMainActivity(iMainActivity);
         return fragment;
+    }
+
+    public void setiMainActivity(IMainActivity iMainActivity){
+        this.iMainActivity = iMainActivity;
     }
 
     @Override
@@ -101,7 +108,13 @@ public class DetailFragment extends Fragment {
         ButterKnife.bind(this, view);
         fragmentManager = this.getActivity().getSupportFragmentManager();
         ft = fragmentManager.beginTransaction();
+        API api = new API( this.getContext(), this.iMainActivity);
+        api.getMangaDetail();
 
         return view;
+    }
+
+    public void create(MangaInfo manga){
+        this.judul.setText(manga.getTitle());
     }
 }

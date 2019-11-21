@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity implements FragmentListener {
+public class MainActivity extends AppCompatActivity implements FragmentListener, IMainActivity {
     MainFragment mainFragment;
     DetailFragment detailFragment;
     FragmentManager fragmentManager;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 //        }
 //        cek=duar;
 
-        this.mainFragment = MainFragment.newInstance("title");
+        this.mainFragment = MainFragment.newInstance("title",this);
         detail=DetailFragment.newInstance("DetailFragment");
         //this.detailFragment = DetailFragment.newInstance("title");
         this.fragmentManager = this.getSupportFragmentManager();
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
 
     @Override
-    public void changePage(int page){
+    public void changePage(int page, int position){
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         if(page==1){
             if(this.mainFragment.isAdded()){
@@ -83,4 +83,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         ft.commit();
     }
 
+    @Override
+    public void getMangaList(ArrayList<Manga> manga) {
+        Log.d("Manga", manga.size() + "");
+
+
+        mainFragment.create(manga);
+    }
+
+    @Override
+    public void getMangaInfo(MangaInfo manga) {
+        detailFragment.create(manga);
+    }
 }

@@ -19,33 +19,33 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainFragment extends Fragment implements IMainActivity {
+public class MainFragment extends Fragment  {
 
     @BindView(R.id.gridView)
     GridView grid;
 
-    private Manga cek[];
     private ArrayList<Manga> manga;
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
     public FragmentListener listener;
 
+    protected IMainActivity iMainActivity;
     public MainFragment() {
 
     }
 
-    public static MainFragment newInstance(String title) {
+    public static MainFragment newInstance(String title, IMainActivity iMainActivity) {
         MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
         args.putString("title", title);
-
+        fragment.setInterface(iMainActivity);
         return fragment;
     }
 
-//  public void setPresenter(MainPresenter presenter) {
-//
-//  }
+  public void setInterface(IMainActivity iMainActivity) {
+    this.iMainActivity = iMainActivity;
+  }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -64,8 +64,7 @@ public class MainFragment extends Fragment implements IMainActivity {
             }
             });
 
-
-        API api = new API( this.getActivity(), this);
+        API api = new API( this.getContext(), this.iMainActivity);
         api.getMangaList();
         return view;
     }
@@ -84,13 +83,10 @@ public class MainFragment extends Fragment implements IMainActivity {
         }
     }
 
-
-    @Override
-    public void getMangaList(ArrayList<Manga> manga) {
-        Log.d("Manga", manga.size() + "");
-
+    public void create(ArrayList<Manga> manga){
         this.manga = manga;
         gridAdapter adapter = new gridAdapter( this.getActivity(), this.manga);
         grid.setAdapter(adapter);
+
     }
 }
