@@ -109,7 +109,7 @@ public class DetailFragment extends Fragment {
         fragmentManager = this.getActivity().getSupportFragmentManager();
         ft = fragmentManager.beginTransaction();
         API api = new API( this.getContext(), this.iMainActivity);
-        api.getMangaDetail();
+//        api.getMangaDetail();
 
         return view;
     }

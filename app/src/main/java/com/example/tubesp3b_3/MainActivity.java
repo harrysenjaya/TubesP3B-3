@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
 //        cek=duar;
 
         this.mainFragment = MainFragment.newInstance("title",this);
-        detail=DetailFragment.newInstance("DetailFragment");
+        detail=DetailFragment.newInstance("DetailFragment",this);
         //this.detailFragment = DetailFragment.newInstance("title");
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
 
 
     @Override
-    public void changePage(int page, int position){
+    public void changePage(int page){
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         if(page==1){
             if(this.mainFragment.isAdded()){
