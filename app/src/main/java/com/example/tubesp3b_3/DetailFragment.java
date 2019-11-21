@@ -41,8 +41,8 @@ public class DetailFragment extends Fragment {
     @BindView(R.id.artis)
     TextView artis;
 
-    @BindView(R.id.judul)
-    TextView judul;
+    @BindView(R.id.title)
+    TextView title;
 
     @BindView(R.id.status)
     TextView status;
@@ -62,26 +62,26 @@ public class DetailFragment extends Fragment {
     @BindView(R.id.dibuat)
     TextView dibuat;
 
-    @BindView(R.id.date)
-    TextView date;
+    @BindView(R.id.chapterDate)
+    TextView chapterDate;
 
-    @BindView(R.id.total)
-    TextView total;
+    @BindView(R.id.tanggalBab)
+    TextView tanggalBab;
+
+    @BindView(R.id.totalChapter)
+    TextView totalChapter;
 
     @BindView(R.id.jumlahChapter)
     TextView jumlahChapter;
 
-    @BindView(R.id.jumlah)
-    TextView jumlah;
-
     @BindView(R.id.chapter)
     TextView chapter;
 
-    @BindView(R.id.Spinner_chapter)
-    Spinner spinner;
+    @BindView(R.id.bab)
+    TextView bab;
 
-    @BindView(R.id.btnChapter)
-    Button btn_Chapter;
+    @BindView(R.id.read)
+    Button read;
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
@@ -119,7 +119,7 @@ public class DetailFragment extends Fragment {
         else{
             gambar.setImageResource(R.drawable.noimage);
         }
-        this.judul.setText(manga.getTitle());
+        this.title.setText(manga.getTitle());
 
     }
 }

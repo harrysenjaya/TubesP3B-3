@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
@@ -15,14 +15,13 @@
     <TextView
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="Hotel Del Luna"
         android:textSize="15sp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@id/image_grid"
         android:textStyle="italic"
         android:layout_marginLeft="25dp"
-        android:id="@+id/titlenya"/>
+        android:id="@+id/titleGrid"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,23 +29,22 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:text="Status : "
-        android:layout_below="@id/titlenya"
+        android:layout_below="@id/titleGrid"
         android:layout_marginLeft="25dp"
-        android:id="@+id/status"
+        android:id="@+id/setatusGrid"
         android:textStyle="bold"
         android:textSize="15sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Boga Aink"
         android:textSize="15sp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_toRightOf="@+id/status"
-        android:layout_below="@id/titlenya"
-        android:id="@+id/statusnya"/>
+        android:layout_toRightOf="@+id/setatusGrid"
+        android:layout_below="@id/titleGrid"
+        android:id="@+id/statusGrid"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,20 +53,19 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="25dp"
         android:text="Last Chapter Date :"
-        android:layout_below="@id/status"
+        android:layout_below="@id/statusGrid"
         android:textStyle="bold"
-        android:id="@+id/chapter"
+        android:id="@+id/tanggalBabGrid"
         android:textSize="15sp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
-        android:text="Januari"
-        android:id="@+id/lastChapterDate"
+        android:id="@+id/chapterDateGrid"
         android:textSize="15sp"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="20dp"
-        android:layout_below="@id/chapter" />
+        android:layout_below="@id/tanggalBabGrid" />
 
 </RelativeLayout>
