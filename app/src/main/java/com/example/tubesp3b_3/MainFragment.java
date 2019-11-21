@@ -65,8 +65,8 @@ public class MainFragment extends Fragment implements IMainActivity {
             });
 
 
-        PostCalculateTask postCalculateTask = new PostCalculateTask( this.getActivity(), this);
-        postCalculateTask.getMangaList();
+        API api = new API( this.getActivity(), this);
+        api.getMangaList();
         return view;
     }
 

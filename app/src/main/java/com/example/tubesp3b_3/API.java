@@ -19,13 +19,13 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
-public class PostCalculateTask {
+public class API {
     protected final String BASE_URL = "https://www.mangaeden.com/api/";
     protected IMainActivity ui;
     protected Context context;
     protected Gson gson;
 
-    public PostCalculateTask(Context context, IMainActivity ui){
+    public API(Context context, IMainActivity ui){
         this.context = context;
         this.ui = ui;
         this.gson = new Gson();
