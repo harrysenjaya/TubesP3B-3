@@ -60,17 +60,6 @@ public class MainFragment extends Fragment  {
         return view;
     }
 
-
-//    public void onAttach(Context context){
-//        super.onAttach(context);
-//        if(context instanceof FragmentListener){
-//            this.listener=(FragmentListener) context;
-//        }
-//        else {
-//            throw new ClassCastException(context.toString()+"must implement FragmentListener");
-//        }
-//    }
-
     public void Create(ArrayList<Manga> manga){
         this.manga = manga;
         GridAdapter adapter = new GridAdapter(this.getActivity(), this.manga);
