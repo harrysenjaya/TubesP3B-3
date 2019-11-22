@@ -17,11 +17,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 class GridAdapter extends BaseAdapter {
 
     protected Context context;
     protected ArrayList<Manga> manga;
     protected LayoutInflater inflater;
+    protected PhotoViewAttacher attacher;
+
 
     public GridAdapter(Context context, ArrayList<Manga> manga) {
         this.context = context;
@@ -58,17 +62,21 @@ class GridAdapter extends BaseAdapter {
         TextView lastChapterDate = convertView.findViewById(R.id.chapterDateGrid);
         if(!this.manga.get(position).getImage().equals("")) {
             Glide.with(convertView).load("https://cdn.mangaeden.com/mangasimg/" + this.manga.get(position).getImage()).into(imageView);
+            attacher=new PhotoViewAttacher(imageView);
         }
         else{
             imageView.setImageResource(R.drawable.noimage);
         }
+
+
+
         title.setText(this.manga.get(position).getTitle());
         status.setText(this.manga.get(position).getStatus());
         Date date =this.manga.get(position).getLast_chapter_date();
         if(date!=null) {
-                String temp = date+"";
-                String[] tempsplit = temp.split(" ");
-                lastChapterDate.setText(tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5]);
+            String temp = date+"";
+            String[] tempsplit = temp.split(" ");
+            lastChapterDate.setText(tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5]);
         }
         else{
             lastChapterDate.setText("-");

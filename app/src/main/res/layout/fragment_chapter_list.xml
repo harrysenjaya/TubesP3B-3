@@ -2,228 +2,227 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/gambar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:src="@color/colorAccent"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/gambar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description :"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:layout_below="@id/penulis"
-        android:id="@+id/deskripsi"
-        android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description :"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:layout_below="@id/penulis"
+            android:id="@+id/deskripsi"
+            android:textStyle="bold"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:layout_below="@id/deskripsi"
-        android:id="@+id/deskription"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Author :"
-        android:textSize="20sp"
-        android:layout_marginLeft="200px"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@id/artis"
-        android:id="@+id/penulis"
-        />
-
-    <TextView
-        android:id="@+id/author"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/artis"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/penulis"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Artist :"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="200px"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@id/title"
-        android:id="@+id/artis"
-        />
-
-    <TextView
-        android:id="@+id/artist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/artis"
-        android:textSize="20sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/gambar"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/title"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Status :"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:textStyle="bold"
-        android:layout_below="@id/deskription"
-        android:id="@+id/setatus"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_toRightOf="@id/setatus"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@id/deskription"
-        android:id="@+id/status"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Category :"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="200px"
-        android:layout_below="@+id/status"
-        android:id="@+id/kategori"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_toRightOf="@id/kategori"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@id/setatus"
-        android:id="@+id/category"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Created :"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:textStyle="bold"
-        android:layout_below="@+id/category"
-        android:id="@+id/dibuat"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_toRightOf="@id/dibuat"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_below="@id/kategori"
-        android:id="@+id/created"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last Chapter Date :"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:layout_below="@id/created"
-        android:id="@+id/tanggalBab"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_below="@id/tanggalBab"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        android:id="@+id/chapterDate"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:text="Total Chapter : "
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_below="@id/chapterDate"
-        android:id="@+id/jumlahChapter"
-        android:layout_marginLeft="200px"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_toRightOf="@id/jumlahChapter"
-        android:layout_below="@id/chapterDate"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="10dp"
-        android:id="@+id/totalChapter"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chapter : "
-        android:textSize="20sp"
-        android:layout_below="@id/jumlahChapter"
-        android:textStyle="bold"
-        android:id="@+id/bab"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="200px"
-        />
-
-    <Spinner
-        android:layout_width="250px"
-        android:layout_height="150px"
-        android:id="@+id/chapter"
-        android:layout_toRightOf="@+id/bab"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@id/totalChapter"/>
+        <TextView
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_below="@id/deskripsi"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:id="@+id/deskription"/>
 
 
-    <Button
-        android:layout_width="150px"
-        android:layout_height="100px"
-        android:text="Read"
-        android:textSize="10sp"
-        android:layout_marginBottom="10dp"
-        android:layout_below="@id/totalChapter"
-        android:layout_toRightOf="@+id/chapter"
-        android:id="@+id/read"
-        />
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Author :"
+            android:textSize="20sp"
+            android:layout_marginLeft="100px"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/artis"
+            android:id="@+id/penulis"
+            />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/artis"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@id/penulis"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artist :"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="100px"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/title"
+            android:id="@+id/artis"
+            />
+
+        <TextView
+            android:id="@+id/artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/artis"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/gambar"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status :"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:textStyle="bold"
+            android:layout_below="@id/deskription"
+            android:id="@+id/setatus"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/setatus"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/deskription"
+            android:id="@+id/status"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category :"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="100px"
+            android:layout_below="@+id/status"
+            android:id="@+id/kategori"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:layout_below="@id/kategori"
+            android:id="@+id/category"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Created :"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:textStyle="bold"
+            android:layout_below="@id/category"
+            android:id="@+id/dibuat"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/dibuat"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/category"
+            android:id="@+id/created"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Chapter Date :"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:layout_below="@id/dibuat"
+            android:id="@+id/tanggalBab"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_below="@id/tanggalBab"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:id="@+id/chapterDate"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Total Chapter : "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_below="@id/chapterDate"
+            android:id="@+id/jumlahChapter"
+            android:layout_marginLeft="100px"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/jumlahChapter"
+            android:layout_below="@id/chapterDate"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/totalChapter"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chapter : "
+            android:textSize="20sp"
+            android:layout_below="@id/jumlahChapter"
+            android:textStyle="bold"
+            android:id="@+id/bab"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="150px"
+            android:id="@+id/chapter"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100px"
+            android:layout_below="@id/bab"/>
+
+
+        <Button
+            android:layout_width="200px"
+            android:layout_height="150px"
+            android:text="Read"
+            android:textStyle="italic"
+            android:textSize="20sp"
+            android:layout_below="@id/bab"
+            android:layout_toRightOf="@id/chapter"
+            android:id="@+id/read"
+            />
+    </RelativeLayout>
 </ScrollView>
