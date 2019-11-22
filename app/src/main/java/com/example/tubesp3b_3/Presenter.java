@@ -92,7 +92,7 @@ public class Presenter {
                     String desc = mangaJSON.getString("description");
                     String status = mangaJSON.getString("status");
                     JSONArray arrayCategory = mangaJSON.getJSONArray("categories");
-                    String category = null;
+                    String category = "";
                     for(int i = 0 ; i< arrayCategory.length();i++){
                         if(i== arrayCategory.length()-1){
                             category+=arrayCategory.getString(i);

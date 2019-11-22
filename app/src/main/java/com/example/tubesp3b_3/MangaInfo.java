@@ -16,7 +16,15 @@ public class MangaInfo {
         this.artist = artist;
         this.author = author;
         this.desc = desc;
-        this.status = status;
+        if(status.equals("2")) {
+            this.status = "Completed";
+        }
+        else if(status.equals("1")){
+            this.status = "Ongoing";
+        }
+        else if(status.equals("0")){
+            this.status = "Suspended";
+        }
         this.category = category;
         this.created = created;
         this.last_chapter_date = last_chapter_date;

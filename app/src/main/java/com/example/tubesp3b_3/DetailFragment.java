@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -15,6 +16,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -24,21 +28,9 @@ public class DetailFragment extends Fragment {
     ImageView gambar;
 
     @BindView(R.id.deskription)
-    TextView deskription;
-
-    @BindView(R.id.deskripsi)
     TextView deskripsi;
 
-    @BindView(R.id.author)
-    TextView author;
-
-    @BindView(R.id.penulis)
-    TextView penulis;
-
     @BindView(R.id.artist)
-    TextView artist;
-
-    @BindView(R.id.artis)
     TextView artis;
 
     @BindView(R.id.title)
@@ -47,38 +39,23 @@ public class DetailFragment extends Fragment {
     @BindView(R.id.status)
     TextView status;
 
-    @BindView(R.id.setatus)
-    TextView setatus;
-
     @BindView(R.id.category)
     TextView category;
 
-    @BindView(R.id.kategori)
-    TextView kategori;
+    @BindView(R.id.author)
+    TextView penulis;
 
     @BindView(R.id.created)
     TextView created;
 
-    @BindView(R.id.dibuat)
-    TextView dibuat;
-
     @BindView(R.id.chapterDate)
     TextView chapterDate;
-
-    @BindView(R.id.tanggalBab)
-    TextView tanggalBab;
 
     @BindView(R.id.totalChapter)
     TextView totalChapter;
 
-    @BindView(R.id.jumlahChapter)
-    TextView jumlahChapter;
-
     @BindView(R.id.chapter)
-    TextView chapter;
-
-    @BindView(R.id.bab)
-    TextView bab;
+    Spinner chapter;
 
     @BindView(R.id.read)
     Button read;
@@ -120,6 +97,40 @@ public class DetailFragment extends Fragment {
             gambar.setImageResource(R.drawable.noimage);
         }
         this.title.setText(manga.getTitle());
+        this.artis.setText(manga.getArtist());
+        this.penulis.setText(manga.getAuthor());
+        this.deskripsi.setText(manga.getDesc());
+        this.status.setText(manga.getStatus());
+        this.category.setText(manga.getCategory());
+        Date date =manga.getCreated();
+        if(date!=null) {
+            String temp = date+"";
+            String[] tempsplit = temp.split(" ");
+            this.created.setText(tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5]);
+        }
+        else{
+            this.created.setText("-");
+        }
+
+        Date lastChapter = manga.getLast_chapter_date();
+        if(date!=null) {
+            String temp = lastChapter+"";
+            String[] tempsplit = temp.split(" ");
+            this.chapterDate.setText(tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5]);
+        }
+        else{
+            this.chapterDate.setText("-");
+        }
+
+//        this.totalChapter.setText(manga.getChapter().size());
+//        ArrayList<Integer> numberChapter = new ArrayList<>();
+//        for(int i = 0; i<manga.getChapter().size(); i++){
+//            numberChapter.add(manga.getChapter().get(i).getChapter());
+//        }
+//        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, numberChapter);
+//        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+//
+//        this.chapter.setAdapter(adapter);
 
     }
 }
