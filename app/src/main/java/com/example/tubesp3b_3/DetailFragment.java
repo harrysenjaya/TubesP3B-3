@@ -123,11 +123,14 @@ public class DetailFragment extends Fragment {
         }
 
         this.totalChapter.setText(manga.getChapter().size()+"");
-        ArrayList<Integer> numberChapter = new ArrayList<>();
+        ArrayList<String> numberChapter = new ArrayList<>();
         for(int i = 0; i<manga.getChapter().size(); i++){
-            numberChapter.add(manga.getChapter().get(i).getChapter());
+            Date last_updated = manga.getChapter().get(i).getLastUpdated();
+            String temp = last_updated+"";
+            String[] tempsplit = temp.split(" ");
+            numberChapter.add(manga.getChapter().get(i).getChapter() + " (" + tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5] + ")");
         }
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_spinner_dropdown_item,numberChapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_spinner_dropdown_item,numberChapter);
         this.chapter.setAdapter(adapter);
 
     }
