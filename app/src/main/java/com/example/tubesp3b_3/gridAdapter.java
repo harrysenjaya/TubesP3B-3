@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.github.chrisbanes.photoview.PhotoViewAttacher;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -17,7 +18,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-import uk.co.senab.photoview.PhotoViewAttacher;
 
 class GridAdapter extends BaseAdapter {
 
@@ -67,8 +67,6 @@ class GridAdapter extends BaseAdapter {
         else{
             imageView.setImageResource(R.drawable.noimage);
         }
-
-
 
         title.setText(this.manga.get(position).getTitle());
         status.setText(this.manga.get(position).getStatus());

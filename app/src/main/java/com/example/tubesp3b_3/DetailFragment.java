@@ -113,7 +113,7 @@ public class DetailFragment extends Fragment {
         }
 
         Date lastChapter = manga.getLast_chapter_date();
-        if(date!=null) {
+        if(lastChapter!=null) {
             String temp = lastChapter+"";
             String[] tempsplit = temp.split(" ");
             this.chapterDate.setText(tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5]);
