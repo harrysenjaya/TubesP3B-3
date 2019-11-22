@@ -21,7 +21,6 @@ public class MainFragment extends Fragment  {
     @BindView(R.id.gridView)
     GridView grid;
 
-    private ArrayList<Manga> manga;
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
     private Presenter presenter;
@@ -61,13 +60,12 @@ public class MainFragment extends Fragment  {
     }
 
     public void Create(ArrayList<Manga> manga){
-        this.manga = manga;
-        GridAdapter adapter = new GridAdapter(this.getActivity(), this.manga);
+        GridAdapter adapter = new GridAdapter(this.getActivity(), manga);
         grid.setAdapter(adapter);
     }
 
     public void MangaInfo(int id, int position){
-        this.presenter.getMangaInfo(manga.get(position).getId());
+        this.presenter.getMangaInfo(position);
         this.presenter.changePage(id);
     }
 }
