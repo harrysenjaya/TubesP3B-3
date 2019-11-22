@@ -133,6 +133,7 @@ public class Presenter {
                         chapters.add(tempChapter);
                     }
                     MangaInfo mangaInfo = new MangaInfo(image, title, artist, author, desc, status, category, created, last_chapter_date, chapters);
+                    Log.d("SIZE",chapters.size()+"");
                     sendMangaInfo(mangaInfo);
                 } catch (JSONException e) {
                     e.printStackTrace();

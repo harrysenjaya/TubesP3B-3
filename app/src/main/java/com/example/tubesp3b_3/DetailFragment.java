@@ -122,15 +122,13 @@ public class DetailFragment extends Fragment {
             this.chapterDate.setText("-");
         }
 
-//        this.totalChapter.setText(manga.getChapter().size());
-//        ArrayList<Integer> numberChapter = new ArrayList<>();
-//        for(int i = 0; i<manga.getChapter().size(); i++){
-//            numberChapter.add(manga.getChapter().get(i).getChapter());
-//        }
-//        ArrayAdapter<Integer> adapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_dropdown_item, numberChapter);
-//        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
-//
-//        this.chapter.setAdapter(adapter);
+        this.totalChapter.setText(manga.getChapter().size()+"");
+        ArrayList<Integer> numberChapter = new ArrayList<>();
+        for(int i = 0; i<manga.getChapter().size(); i++){
+            numberChapter.add(manga.getChapter().get(i).getChapter());
+        }
+        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_spinner_dropdown_item,numberChapter);
+        this.chapter.setAdapter(adapter);
 
     }
 }
