@@ -20,6 +20,7 @@ import java.util.Date;
 public class Presenter {
     private IMainActivity iMainActivity;
     private Context context;
+    private ArrayList<Manga> manga;
     protected final String BASE_URL = "https://www.mangaeden.com/api/";
 
     public Presenter(IMainActivity iMainActivity, Context context){
@@ -74,8 +75,9 @@ public class Presenter {
 
     }
 
-    public void getMangaInfo(String id){
+    public void getMangaInfo(int position){
         RequestQueue queue = Volley.newRequestQueue(context);
+        String id = this.manga.get(position).getId();
         String url =BASE_URL+"manga/"+id;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url,null, new Response.Listener<JSONObject>() {
             @Override
@@ -146,6 +148,7 @@ public class Presenter {
     }
 
     public void sendMangaList(ArrayList<Manga> manga){
+        this.manga = manga;
         this.iMainActivity.getMangaList(manga);
     }
 
