@@ -7,10 +7,13 @@
     tools:context=".MainActivity">
 
     <SearchView
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/etSearch"
         android:gravity="left"
+        android:queryHint="Search here"
+        android:iconifiedByDefault="false"
+        android:clickable="true"
         ></SearchView>
 
     <Spinner
