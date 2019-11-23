@@ -14,6 +14,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 
@@ -22,8 +23,9 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class MangaFragment extends Fragment {
-    @BindView(R.id.photoView)
-    PhotoView mangaPhoto;
+
+    @BindView(R.id.imageSlider)
+    SliderView sliderView;
 
     private Presenter presenter;
     private FragmentManager fragmentManager;
@@ -56,8 +58,8 @@ public class MangaFragment extends Fragment {
     }
 
     public void Create(ArrayList<String> manga){
-        Glide.with(this).load("https://cdn.mangaeden.com/mangasimg/" + manga.get(counter)).into(this.mangaPhoto);
-    }
+        SliderAdapter adapter = new SliderAdapter(this.getContext(),manga);
+        sliderView.setSliderAdapter(adapter);    }
 
 
 }
