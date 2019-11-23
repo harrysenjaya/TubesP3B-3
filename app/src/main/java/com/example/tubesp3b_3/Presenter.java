@@ -179,8 +179,7 @@ public class Presenter {
 
     public void sendMangaList(ArrayList<Manga> manga){
         //Collections.sort(manga);
-        this.sortByAtoZ();
-        this.manga = manga;
+        this.manga = this.sortByAtoZ(manga);
         this.iMainActivity.getMangaList(manga);
     }
 
@@ -192,17 +191,17 @@ public class Presenter {
         this.iMainActivity.getMangaPage(manga);
     }
 
-    public ArrayList<Manga> sortByAtoZ(){
+    public ArrayList<Manga> sortByAtoZ(ArrayList<Manga> manga){
         Collections.sort(manga, Manga.atoZComparator);
         return manga;
     }
 
-    public ArrayList<Manga> sortByZtoA(){
+    public ArrayList<Manga> sortByZtoA(ArrayList<Manga> manga){
         Collections.sort(manga, Manga.ztoAComparator);
         return manga;
     }
 
-    public ArrayList<Manga> sortByHits(){
+    public ArrayList<Manga> sortByHits(ArrayList<Manga> manga){
         Collections.sort(manga, Manga.hitsComparator);
         return manga;
     }
