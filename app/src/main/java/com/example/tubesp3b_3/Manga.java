@@ -72,8 +72,8 @@ public class Manga implements Comparable<Manga>{
 
     public static Comparator<Manga> ztoAComparator  = new Comparator<Manga>() {
         @Override
-        public int compare(Manga manga, Manga t1) {
-            return (int) (t1.getTitle().compareTo(manga.getTitle()));
+        public int compare(Manga manga, Manga manga2) {
+            return (int) (manga2.getTitle().compareTo(manga.getTitle()));
         }
     };
 

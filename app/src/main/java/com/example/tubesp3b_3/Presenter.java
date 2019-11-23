@@ -178,7 +178,8 @@ public class Presenter {
     }
 
     public void sendMangaList(ArrayList<Manga> manga){
-        Collections.sort(manga);
+        //Collections.sort(manga);
+        sortByZtoA();
         this.manga = manga;
         this.iMainActivity.getMangaList(manga);
     }
@@ -192,12 +193,12 @@ public class Presenter {
     }
 
     public ArrayList<Manga> sortByAtoZ(){
-        Collections.sort(Manga, Manga.atoZComparator);
+        Collections.sort(manga, Manga.atoZComparator);
         return manga;
     }
 
     public ArrayList<Manga> sortByZtoA(){
-        Collections.sort(Manga.ztoAComparator, Manga);
+        Collections.sort(Manga.ztoAComparator, manga);
         return manga;
     }
 }
