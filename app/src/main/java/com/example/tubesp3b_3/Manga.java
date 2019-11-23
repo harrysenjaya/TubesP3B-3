@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Comparator;
 
-public class Manga implements Comparable<Manga>{
+public class Manga {
     private String image;
     private String title;
     private String id;
@@ -65,8 +65,8 @@ public class Manga implements Comparable<Manga>{
     public static Comparator<Manga> hitsComparator = new Comparator<Manga>() {
         @Override
         public int compare(Manga manga, Manga t1) {
-            int compare = ((Manga)manga).getHits();
-            return compare- Manga.this.hits;
+            return (t1.getHits() < manga.getHits() ? -1 :
+                    (t1.getHits() == manga.getHits() ? 0 : 1));
         }
     };
 
