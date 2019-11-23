@@ -2,7 +2,7 @@ package com.example.tubesp3b_3;
 
 import java.util.Date;
 
-public class Manga implements Comparable<Manga>{
+public class Manga implements Comparable<Manga> {
     private String image;
     private String title;
     private String id;
@@ -10,17 +10,15 @@ public class Manga implements Comparable<Manga>{
     private Date last_chapter_date;
     private int hits;
 
-    public Manga(String image, String title, String id, String status , Date last_chapter_date, int hits) {
+    public Manga(String image, String title, String id, String status, Date last_chapter_date, int hits) {
         this.image = image;
         this.title = title;
         this.id = id;
-        if(status.equals("2")) {
+        if (status.equals("2")) {
             this.status = "Completed";
-        }
-        else if(status.equals("1")){
+        } else if (status.equals("1")) {
             this.status = "Ongoing";
-        }
-        else if(status.equals("0")){
+        } else if (status.equals("0")) {
             this.status = "Suspended";
         }
         this.last_chapter_date = last_chapter_date;
@@ -51,8 +49,10 @@ public class Manga implements Comparable<Manga>{
         return hits;
     }
 
-    public int compareTo(Manga manga){
-        int compare = ((Manga)manga).getHits();
-        return compare-this.hits;
+    public int compareTo(Manga manga) {
+        int compare = ((Manga) manga).getHits();
+        return compare - this.hits;
     }
+
+
 }
