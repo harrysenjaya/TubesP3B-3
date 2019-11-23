@@ -8,6 +8,6 @@
     <com.github.chrisbanes.photoview.PhotoView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/page_photoView"/>
+        android:id="@+id/photoView"/>
 
 </LinearLayout>

@@ -19,7 +19,7 @@ import butterknife.Unbinder;
 public class MangaFragment extends Fragment {
     private Chapter ch;
 
-    @BindView(R.id.mangaPhoto)
+    @BindView(R.id.photoView)
     PhotoView mangaPhoto;
 
     ViewPager viewPager;
