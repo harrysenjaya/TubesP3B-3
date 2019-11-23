@@ -148,6 +148,49 @@ public class Presenter {
         queue.add(jsonObjectRequest);
     }
 
+    public void getMangaPage(){
+        RequestQueue queue = Volley.newRequestQueue(context);
+        String url =BASE_URL+"list/0";
+        final ArrayList<Manga> mangaList = new ArrayList();
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url,null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray arrayManga = response.getJSONArray("manga");
+                    for(int i = 0 ; i<arrayManga.length(); i++){
+                        JSONObject mangaJSON = arrayManga.getJSONObject(i);
+                        String image = "";
+                        if(mangaJSON.has("im") && mangaJSON.getString("im")!= null && !mangaJSON.getString("im").equals("null")) {
+                            image = mangaJSON.getString("im");
+                        }
+                        String title = mangaJSON.getString("t");
+                        String id = mangaJSON.getString("i");
+                        String status = mangaJSON.getString("s");
+                        Date last_chapter_date = null;
+                        if(mangaJSON.has("ld") && mangaJSON.getString("ld")!= null && !mangaJSON.getString("ld").equals("null")) {
+                            double tempdate = Double.parseDouble(mangaJSON.getString("ld"));
+                            long date = (long)tempdate;
+                            last_chapter_date = new Date(date*1000);
+                        }
+                        int hits = Integer.parseInt(mangaJSON.getString("h"));
+                        Manga manga = new Manga(image,title,id,status,last_chapter_date,hits);
+                        mangaList.add(manga);
+                    }
+                    sendMangaList(mangaList);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("ERROR","");
+            }
+        });
+        queue.add(jsonObjectRequest);
+
+    }
+
     public void sendMangaList(ArrayList<Manga> manga){
         this.manga = manga;
         this.iMainActivity.getMangaList(manga);
