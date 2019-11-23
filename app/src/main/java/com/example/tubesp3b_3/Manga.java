@@ -1,6 +1,9 @@
 package com.example.tubesp3b_3;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Comparator;
 
 public class Manga implements Comparable<Manga>{
     private String image;
@@ -55,4 +58,19 @@ public class Manga implements Comparable<Manga>{
         int compare = ((Manga)manga).getHits();
         return compare-this.hits;
     }
+
+    public Comparator<Manga> atoZComparator = new Comparator<Manga>() {
+        @Override
+        public int compare(Manga manga, Manga t1) {
+            return (int) (manga.getTitle().compareTo(t1.getTitle()));
+        }
+    };
+
+    public Comparator<Manga> ztoAComparator  = new Comparator<Manga>() {
+        @Override
+        public int compare(Manga manga, Manga t1) {
+            return (int) (t1.getTitle().compareTo(manga.getTitle()));
+        }
+    };
+
 }

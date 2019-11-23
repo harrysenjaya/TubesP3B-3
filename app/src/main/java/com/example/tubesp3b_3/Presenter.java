@@ -192,4 +192,8 @@ public class Presenter {
         this.iMainActivity.getMangaPage(manga);
     }
 
+    public ArrayList<Manga> sortByAtoZ(){
+        Collections.sort(manga, manga.atoZComparator);
+        return manga;
+    }
 }
