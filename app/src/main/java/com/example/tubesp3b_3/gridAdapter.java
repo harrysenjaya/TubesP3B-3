@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.github.chrisbanes.photoview.PhotoViewAttacher;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,7 +23,6 @@ class GridAdapter extends BaseAdapter {
     protected Context context;
     protected ArrayList<Manga> manga;
     protected LayoutInflater inflater;
-    protected PhotoViewAttacher attacher;
 
 
     public GridAdapter(Context context, ArrayList<Manga> manga) {
@@ -62,7 +60,6 @@ class GridAdapter extends BaseAdapter {
         TextView lastChapterDate = convertView.findViewById(R.id.chapterDateGrid);
         if(!this.manga.get(position).getImage().equals("")) {
             Glide.with(convertView).load("https://cdn.mangaeden.com/mangasimg/" + this.manga.get(position).getImage()).into(imageView);
-            attacher=new PhotoViewAttacher(imageView);
         }
         else{
             imageView.setImageResource(R.drawable.noimage);
