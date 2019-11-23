@@ -9,10 +9,8 @@
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:sliderIndicatorGravity="center_horizontal|bottom"
-        app:sliderIndicatorOrientation="horizontal"
-        app:sliderIndicatorSelectedColor="#FFFFFF"
-        app:sliderIndicatorUnselectedColor="#000000"
+        app:sliderIndicatorSelectedColor="@android:color/transparent"
+        app:sliderIndicatorUnselectedColor="@android:color/transparent"
         app:sliderCircularHandlerEnabled="false"
       />
 
