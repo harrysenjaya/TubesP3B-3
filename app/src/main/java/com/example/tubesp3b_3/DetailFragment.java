@@ -137,4 +137,9 @@ public class DetailFragment extends Fragment {
 
     }
 
+    @OnClick(R.id.read)
+    public void read(){
+
+    }
+
 }
