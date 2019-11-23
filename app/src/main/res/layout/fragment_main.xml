@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <SearchView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etSearch"></SearchView>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/etSearch"
+        android:id="@+id/sortSpinner"
+        android:entries="@array/options"></Spinner>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSort"
+        android:text="Sort"
+        android:layout_toRightOf="@id/sortSpinner"></Button>
+
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

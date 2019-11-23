@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.SearchView;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -20,6 +23,15 @@ public class MainFragment extends Fragment  {
 
     @BindView(R.id.gridView)
     GridView grid;
+
+    @BindView(R.id.btnSort)
+    Button btn_Sort;
+
+    @BindView(R.id.etSearch)
+    SearchView et_Search;
+
+    @BindView(R.id.sortSpinner)
+    Spinner spinnerSort;
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
@@ -62,6 +74,31 @@ public class MainFragment extends Fragment  {
     public void Create(ArrayList<Manga> manga){
         GridAdapter adapter = new GridAdapter(this.getActivity(), manga);
         grid.setAdapter(adapter);
+
+        this.btn_Sort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = spinnerSort.getSelectedItem().toString();
+
+                if(text.equals("Hits")){
+                    presenter.sortByHits(manga);
+                    GridAdapter adapter1 = new GridAdapter(getActivity(), manga);
+                    grid.setAdapter(adapter1);
+                }
+                else if(text.equals("A - Z")){
+                    presenter.sortByAtoZ(manga);
+                    GridAdapter adapter1 = new GridAdapter(getActivity(), manga);
+                    grid.setAdapter(adapter1);
+                }
+                else{
+                    presenter.sortByZtoA(manga);
+                    GridAdapter adapter1 = new GridAdapter(getActivity(), manga);
+                    grid.setAdapter(adapter1);
+                }
+            }
+        });
+
+
     }
 
     public void MangaInfo(int id, int position){
