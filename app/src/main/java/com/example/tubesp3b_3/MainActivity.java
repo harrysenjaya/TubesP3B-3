@@ -76,6 +76,18 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
                 ft.hide(this.detailFragment);
             }
         }
+        else if(page==3) {
+            if(this.mangaFragment.isAdded()){
+                ft.show(this.mangaFragment);
+            }
+            else{
+                ft.add(R.id.container, this.mangaFragment).addToBackStack(null);
+            }
+            if(this.detailFragment.isAdded()){
+                ft.hide(this.detailFragment);
+            }
+        }
+
         ft.commit();
     }
 
