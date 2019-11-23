@@ -192,7 +192,12 @@ public class Presenter {
     }
 
     public ArrayList<Manga> sortByAtoZ(){
-        Collections.sort(manga, manga.atoZComparator);
+        Collections.sort(Manga, Manga.atoZComparator);
+        return manga;
+    }
+
+    public ArrayList<Manga> sortByZtoA(){
+        Collections.sort(Manga.ztoAComparator, Manga);
         return manga;
     }
 }

@@ -54,19 +54,23 @@ public class Manga implements Comparable<Manga>{
         return hits;
     }
 
-    public int compareTo(Manga manga){
-        int compare = ((Manga)manga).getHits();
-        return compare-this.hits;
-    }
 
-    public Comparator<Manga> atoZComparator = new Comparator<Manga>() {
+    public static Comparator<Manga> atoZComparator = new Comparator<Manga>() {
         @Override
         public int compare(Manga manga, Manga t1) {
             return (int) (manga.getTitle().compareTo(t1.getTitle()));
         }
     };
 
-    public Comparator<Manga> ztoAComparator  = new Comparator<Manga>() {
+    public static Comparator<Manga> hitsComparator = new Comparator<Manga>() {
+        @Override
+        public int compare(Manga manga, Manga t1) {
+            int compare = ((Manga)manga).getHits();
+            return compare- Manga.this.hits;
+        }
+    };
+
+    public static Comparator<Manga> ztoAComparator  = new Comparator<Manga>() {
         @Override
         public int compare(Manga manga, Manga t1) {
             return (int) (t1.getTitle().compareTo(manga.getTitle()));
