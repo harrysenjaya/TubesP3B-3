@@ -8,22 +8,27 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.github.chrisbanes.photoview.PhotoView;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class MangaFragment extends Fragment {
-    private Chapter ch;
-
     @BindView(R.id.photoView)
     PhotoView mangaPhoto;
 
-    ViewPager viewPager;
     private Presenter presenter;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction ft;
+    private int counter = 0;
 
     public MangaFragment(){
 
@@ -43,21 +48,15 @@ public class MangaFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        LinearLayout view =(LinearLayout) inflater.inflate(R.layout.fragment_manga, container, false);
-
-        this.mangaPhoto.setImageResource(R.drawable.noimage);
-        this.viewPager = new ViewPager((this.getActivity())){
-            @Override
-            public boolean onInterceptTouchEvent(MotionEvent ev){
-                try{
-                    return super.onInterceptTouchEvent(ev);
-                } catch (Exception e){
-                    return false;
-                }
-            }
-            };
-        view.addView(this.viewPager);
+        View view = inflater.inflate(R.layout.fragment_manga, container, false);
+        ButterKnife.bind(this, view);
+        fragmentManager = this.getActivity().getSupportFragmentManager();
+        ft = fragmentManager.beginTransaction();
         return view;
+    }
+
+    public void Create(ArrayList<String> manga){
+        Glide.with(this).load("https://cdn.mangaeden.com/mangasimg/" + manga.get(counter)).into(this.mangaPhoto);
     }
 
 

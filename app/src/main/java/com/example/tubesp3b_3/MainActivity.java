@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             if(this.detailFragment.isAdded()){
                 ft.hide(this.detailFragment);
             }
+            if(this.mangaFragment.isAdded()){
+                ft.hide(this.mangaFragment);
+            }
         }
         else if(page==2){
             if(this.detailFragment.isAdded()){
@@ -54,6 +57,23 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
             }
             if(this.mainFragment.isAdded()){
                 ft.hide(this.mainFragment);
+            }
+            if(this.mangaFragment.isAdded()){
+                ft.hide(this.mangaFragment);
+            }
+        }
+        else if(page==3){
+            if(this.mangaFragment.isAdded()){
+                ft.show(this.mangaFragment);
+            }
+            else{
+                ft.add(R.id.container,this.mangaFragment).addToBackStack(null);
+            }
+            if(this.mainFragment.isAdded()){
+                ft.hide(this.mainFragment);
+            }
+            if(this.detailFragment.isAdded()){
+                ft.hide(this.detailFragment);
             }
         }
         ft.commit();
@@ -67,6 +87,11 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
     @Override
     public void getMangaInfo(MangaInfo manga) {
       detailFragment.Create(manga);
+    }
+
+    @Override
+    public void getMangaPage(ArrayList<String> manga) {
+        mangaFragment.Create(manga);
     }
 
 }

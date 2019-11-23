@@ -15,6 +15,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 
 public class Presenter {
@@ -122,14 +125,14 @@ public class Presenter {
 
                     for(int i = 0 ; i<arrayChapter.length(); i++) {
                         JSONArray chapter = arrayChapter.getJSONArray(i);
-                        int chapterNumber = chapter.getInt(0);
+                        String chapterNumber = chapter.getString(0);
                         Date chapterDate = null;
                         double tempdate = Double.parseDouble(chapter.getString(1));
                         long date = (long)tempdate;
                         chapterDate = new Date(date*1000);
                         String chapterTitle = chapter.getString(2);
                         String id = chapter.getString(3);
-                        Chapter tempChapter = new Chapter(chapterNumber,chapterDate,title,id );
+                        Chapter tempChapter = new Chapter(chapterNumber,chapterDate,chapterTitle,id );
                         chapters.add(tempChapter);
                     }
                     MangaInfo mangaInfo = new MangaInfo(image, title, artist, author, desc, status, category, created, last_chapter_date, chapters);
@@ -148,35 +151,19 @@ public class Presenter {
         queue.add(jsonObjectRequest);
     }
 
-    public void getMangaPage(){
+    public void getMangaPage(String id){
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url =BASE_URL+"list/0";
-        final ArrayList<Manga> mangaList = new ArrayList();
+        String url =BASE_URL+"chapter/"+id;
+        final ArrayList<String> image = new ArrayList();
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url,null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    JSONArray arrayManga = response.getJSONArray("manga");
-                    for(int i = 0 ; i<arrayManga.length(); i++){
-                        JSONObject mangaJSON = arrayManga.getJSONObject(i);
-                        String image = "";
-                        if(mangaJSON.has("im") && mangaJSON.getString("im")!= null && !mangaJSON.getString("im").equals("null")) {
-                            image = mangaJSON.getString("im");
-                        }
-                        String title = mangaJSON.getString("t");
-                        String id = mangaJSON.getString("i");
-                        String status = mangaJSON.getString("s");
-                        Date last_chapter_date = null;
-                        if(mangaJSON.has("ld") && mangaJSON.getString("ld")!= null && !mangaJSON.getString("ld").equals("null")) {
-                            double tempdate = Double.parseDouble(mangaJSON.getString("ld"));
-                            long date = (long)tempdate;
-                            last_chapter_date = new Date(date*1000);
-                        }
-                        int hits = Integer.parseInt(mangaJSON.getString("h"));
-                        Manga manga = new Manga(image,title,id,status,last_chapter_date,hits);
-                        mangaList.add(manga);
+                    JSONArray arrayImage = response.getJSONArray("images");
+                    for(int i = arrayImage.length()-1 ; i>=0; i--){
+                        image.add(arrayImage.getJSONArray(i).getString(1));
                     }
-                    sendMangaList(mangaList);
+                    sendMangaPage(image);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -192,6 +179,7 @@ public class Presenter {
     }
 
     public void sendMangaList(ArrayList<Manga> manga){
+        Collections.sort(manga);
         this.manga = manga;
         this.iMainActivity.getMangaList(manga);
     }
@@ -200,5 +188,8 @@ public class Presenter {
         this.iMainActivity.getMangaInfo(manga);
     }
 
+    public void sendMangaPage(ArrayList<String> manga){
+        this.iMainActivity.getMangaPage(manga);
+    }
 
 }

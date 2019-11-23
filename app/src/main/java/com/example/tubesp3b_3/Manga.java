@@ -2,7 +2,7 @@ package com.example.tubesp3b_3;
 
 import java.util.Date;
 
-public class Manga {
+public class Manga implements Comparable<Manga>{
     private String image;
     private String title;
     private String id;
@@ -49,5 +49,10 @@ public class Manga {
 
     public int getHits() {
         return hits;
+    }
+
+    public int compareTo(Manga manga){
+        int compare = ((Manga)manga).getHits();
+        return compare-this.hits;
     }
 }

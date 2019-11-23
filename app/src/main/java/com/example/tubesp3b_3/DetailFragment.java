@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DetailFragment extends Fragment {
+public class DetailFragment extends Fragment{
 
     @BindView(R.id.gambar)
     ImageView gambar;
@@ -130,11 +130,28 @@ public class DetailFragment extends Fragment {
             Date last_updated = manga.getChapter().get(i).getLastUpdated();
             String temp = last_updated+"";
             String[] tempsplit = temp.split(" ");
-            numberChapter.add(manga.getChapter().get(i).getChapter() + " (" + tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5] + ")");
+            if(manga.getChapter().get(i).getChapter().equals(manga.getChapter().get(i).getTitle())) {
+                numberChapter.add(manga.getChapter().get(i).getChapter() + " (" + tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5] + ")");
+            }
+            else{
+                numberChapter.add(manga.getChapter().get(i).getChapter() + " - " + manga.getChapter().get(i).getTitle() + " (" + tempsplit[2] + " " + tempsplit[1] + " " + tempsplit[5] + ")");
+            }
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this.getContext(), android.R.layout.simple_spinner_dropdown_item,numberChapter);
         this.chapter.setAdapter(adapter);
 
+        this.read.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int index = chapter.getSelectedItemPosition();
+                Read(manga.getChapter().get(index).getId());
+            }
+        });
+
     }
 
+    public void Read(String id){
+        this.presenter.getMangaPage(id);
+        this.presenter.changePage(3);
+    }
 }

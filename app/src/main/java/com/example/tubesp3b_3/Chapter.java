@@ -3,18 +3,17 @@ package com.example.tubesp3b_3;
 import java.util.Date;
 
 public class Chapter {
-    private int chapter;
-    private String id, title;
+    private String id, title, chapter;
     private Date lastUpdated;
 
-    public Chapter(int chapter,Date lastUpdated, String title, String id) {
+    public Chapter(String chapter,Date lastUpdated, String title, String id) {
         this.chapter = chapter;
         this.id = id;
         this.title = title;
         this.lastUpdated = lastUpdated;
     }
 
-    public int getChapter() {
+    public String getChapter() {
         return chapter;
     }
 
