@@ -21,6 +21,7 @@ import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class DetailFragment extends Fragment {
 
@@ -59,6 +60,7 @@ public class DetailFragment extends Fragment {
 
     @BindView(R.id.read)
     Button read;
+
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
@@ -134,4 +136,5 @@ public class DetailFragment extends Fragment {
         this.chapter.setAdapter(adapter);
 
     }
+
 }
