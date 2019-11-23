@@ -218,10 +218,12 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Read"
+            android:layout_alignParentRight="true"
             android:textStyle="italic"
             android:textSize="20sp"
             android:layout_below="@id/bab"
             android:layout_toRightOf="@id/chapter"
+            android:layout_marginRight="30dp"
             android:id="@+id/read"
             />
     </RelativeLayout>
