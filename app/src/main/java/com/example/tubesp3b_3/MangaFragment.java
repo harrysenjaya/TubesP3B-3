@@ -60,6 +60,4 @@ public class MangaFragment extends Fragment {
     public void Create(ArrayList<String> manga){
         SliderAdapter adapter = new SliderAdapter(this.getContext(),manga);
         sliderView.setSliderAdapter(adapter);    }
-
-
 }
