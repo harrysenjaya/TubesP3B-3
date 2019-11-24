@@ -1,4 +1,4 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.View;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +15,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.bumptech.glide.Glide;
+import com.example.tubesp3b_3.Model.MangaInfo;
+import com.example.tubesp3b_3.Presenter.Presenter;
+import com.example.tubesp3b_3.R;
 
 import java.util.ArrayList;
 import java.util.Date;

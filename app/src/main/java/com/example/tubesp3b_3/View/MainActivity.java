@@ -1,4 +1,4 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.View;
 
 
 import android.os.Bundle;
@@ -8,15 +8,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.tubesp3b_3.Interface.IMainActivity;
+import com.example.tubesp3b_3.Model.Manga;
+import com.example.tubesp3b_3.Model.MangaInfo;
+import com.example.tubesp3b_3.Presenter.Presenter;
+import com.example.tubesp3b_3.R;
+
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements IMainActivity {
-    MainFragment mainFragment;
-    DetailFragment detailFragment;
-    FragmentManager fragmentManager;
-    Presenter presenter;
-    MangaFragment mangaFragment;
+    private MainFragment mainFragment;
+    private DetailFragment detailFragment;
+    private FragmentManager fragmentManager;
+    private Presenter presenter;
+    private MangaFragment mangaFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

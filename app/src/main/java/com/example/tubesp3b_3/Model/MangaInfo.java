@@ -1,4 +1,4 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.Model;
 
 import java.util.ArrayList;
 import java.util.Date;

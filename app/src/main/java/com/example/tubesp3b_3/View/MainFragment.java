@@ -1,20 +1,23 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.View;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ProgressBar;
 import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.example.tubesp3b_3.Adapter.GridAdapter;
+import com.example.tubesp3b_3.Model.Manga;
+import com.example.tubesp3b_3.Interface.OnItemClick;
+import com.example.tubesp3b_3.Presenter.Presenter;
+import com.example.tubesp3b_3.R;
 
 import java.util.ArrayList;
 
@@ -114,10 +117,4 @@ public class MainFragment extends Fragment {
         this.presenter.getMangaInfo(idManga);
         this.presenter.changePage(id);
     }
-
-
-
-
-
-
 }

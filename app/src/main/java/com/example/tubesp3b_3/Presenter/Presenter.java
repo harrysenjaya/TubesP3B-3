@@ -1,8 +1,7 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.Presenter;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.ListView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -10,15 +9,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.tubesp3b_3.Interface.IMainActivity;
+import com.example.tubesp3b_3.Model.Chapter;
+import com.example.tubesp3b_3.Model.Manga;
+import com.example.tubesp3b_3.Model.MangaInfo;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 
 public class Presenter {

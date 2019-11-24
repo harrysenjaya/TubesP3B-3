@@ -1,7 +1,6 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.Adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.tubesp3b_3.Model.Manga;
+import com.example.tubesp3b_3.Interface.OnItemClick;
+import com.example.tubesp3b_3.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
 
-class GridAdapter extends BaseAdapter {
+public class GridAdapter extends BaseAdapter {
 
     private Context context;
     private ArrayList<Manga> original;

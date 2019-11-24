@@ -1,26 +1,23 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.View;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.ViewPager;
 
-import com.bumptech.glide.Glide;
-import com.github.chrisbanes.photoview.PhotoView;
+import com.example.tubesp3b_3.Presenter.Presenter;
+import com.example.tubesp3b_3.R;
+import com.example.tubesp3b_3.Adapter.SliderAdapter;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 public class MangaFragment extends Fragment {
 
@@ -30,7 +27,6 @@ public class MangaFragment extends Fragment {
     private Presenter presenter;
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
-    private int counter = 0;
 
     public MangaFragment(){
 

@@ -1,4 +1,7 @@
-package com.example.tubesp3b_3;
+package com.example.tubesp3b_3.Interface;
+
+import com.example.tubesp3b_3.Model.Manga;
+import com.example.tubesp3b_3.Model.MangaInfo;
 
 import java.util.ArrayList;
 
