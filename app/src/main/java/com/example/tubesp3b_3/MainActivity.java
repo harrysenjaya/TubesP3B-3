@@ -1,6 +1,8 @@
 package com.example.tubesp3b_3;
 
+
 import android.os.Bundle;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         this.presenter = new Presenter(this,this);
         this.mainFragment = MainFragment.newInstance("title",this.presenter);
         this.detailFragment = DetailFragment.newInstance("DetailFragment",this.presenter);
