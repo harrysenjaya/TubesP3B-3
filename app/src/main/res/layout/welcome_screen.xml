@@ -7,10 +7,11 @@
     android:id="@+id/welcome">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/imageHeightWelcome"
-        android:layout_marginLeft="@dimen/marginLeftAtas"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/heightWelcome"
+        android:layout_marginTop="-40dp"
         android:src="@drawable/cidori"
+        android:layout_marginLeft="-10dp"
         android:id="@+id/sasuke"/>
 
     <ImageView
@@ -21,11 +22,11 @@
         android:id="@+id/tulisanManga"/>
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="@dimen/heightWelcome"
-        android:layout_marginTop="@dimen/heightWelcome"
+        android:layout_marginTop="460dp"
         android:src="@drawable/naruto"
-        android:layout_marginLeft="@dimen/marginLeftBawah"
+        android:layout_marginLeft="160dp"
         android:id="@+id/naruto"/>
 
 </RelativeLayout>
