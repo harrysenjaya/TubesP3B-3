@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/imageHeightWelcome"
-        android:layout_marginTop="@dimen/marginTopWelcome"
+        android:layout_marginLeft="@dimen/marginLeftAtas"
         android:src="@drawable/cidori"
         android:id="@+id/sasuke"/>
 
@@ -25,6 +25,7 @@
         android:layout_height="@dimen/heightWelcome"
         android:layout_marginTop="@dimen/heightWelcome"
         android:src="@drawable/naruto"
+        android:layout_marginLeft="@dimen/marginLeftBawah"
         android:id="@+id/naruto"/>
 
 </RelativeLayout>
