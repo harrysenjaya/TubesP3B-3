@@ -180,7 +180,6 @@ public class Presenter {
     }
 
     public void sendMangaList(ArrayList<Manga> manga){
-        //Collections.sort(manga);
         this.manga = this.sortByAtoZ(manga);
         this.iMainActivity.getMangaList(manga);
     }
@@ -209,21 +208,17 @@ public class Presenter {
     }
 
     public ArrayList<Manga> searchManga(String title){
-        ArrayList<Manga> newArr = new ArrayList();
+        ArrayList<Manga> newArr = new ArrayList<>();
+        int count = title.length();
+
         for(int i=0; i<manga.size();i++){
-            int count = title.toLowerCase().length();
-            if(manga.get(i).getTitle().substring(0,title.length()).equals(title));
-            newArr.add(manga.get(i));
+            if(manga.get(i).getTitle().length()>=count) {
+                if (manga.get(i).getTitle().substring(0, title.length()).equalsIgnoreCase(title)) {
+                    newArr.add(manga.get(i));
+                }
+            }
         }
         return newArr;
     }
-
-    /*public ArrayList<String> search(){
-        ArrayList<String> listManga = new ArrayList<>();
-        for(int i=0; i<manga.size();i++){
-            listManga.add(i, manga.get(i).getTitle());
-        }
-        return listManga;
-    }*/
 
 }

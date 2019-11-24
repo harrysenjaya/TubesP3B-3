@@ -3,6 +3,7 @@ package com.example.tubesp3b_3;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,8 +38,6 @@ public class MainFragment extends Fragment  {
 
     @BindView(R.id.sortSpinner)
     Spinner spinnerSort;
-
-
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
@@ -78,14 +77,12 @@ public class MainFragment extends Fragment  {
         this.et_Search.setEnabled(false);
         this.presenter.getMangaList();
 
-
         return view;
     }
 
     public void Create(ArrayList<Manga> manga){
         GridAdapter adapter = new GridAdapter(this.getActivity(), manga);
         grid.setAdapter(adapter);
-
 
         this.btn_Sort.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,13 +109,14 @@ public class MainFragment extends Fragment  {
 
         et_Search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public boolean onQueryTextSubmit(String s) {
+            public boolean onQueryTextSubmit(String newText) {
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                GridAdapter adapter2 = new GridAdapter(getActivity(), presenter.searchManga(newText));
+                ArrayList<Manga> temp = presenter.searchManga(newText);
+                GridAdapter adapter2 = new GridAdapter(getActivity(), temp);
                 grid.setAdapter(adapter2);
                 return false;
             }
