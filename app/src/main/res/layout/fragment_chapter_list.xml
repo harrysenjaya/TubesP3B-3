@@ -6,31 +6,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="@dimen/imageWidth"
+            android:layout_height="@dimen/imageHeight"
             android:id="@+id/gambar"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginBottom="@dimen/marginBottomImage"
+            android:layout_marginTop="@dimen/marginTop" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Description :"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:textSize="@dimen/textSize"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:layout_below="@id/penulis"
             android:id="@+id/deskripsi"
             android:textStyle="bold"/>
 
         <TextView
-            android:layout_width="330dp"
+            android:layout_width="@dimen/textViewWidth"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:layout_below="@id/deskripsi"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:id="@+id/deskription"/>
 
 
@@ -38,10 +38,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Author :"
-            android:textSize="20sp"
-            android:layout_marginLeft="100px"
+            android:textSize="@dimen/textSize"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:textStyle="bold"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/marginBottom"
             android:layout_below="@id/artis"
             android:id="@+id/penulis"
             />
@@ -51,20 +51,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/artis"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/marginLeftFill"
+            android:layout_marginBottom="@dimen/marginBottom"
             android:layout_toRightOf="@id/penulis"
-            android:textSize="20sp" />
+            android:textSize="@dimen/textSize" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Artist :"
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:textStyle="bold"
-            android:layout_marginLeft="100px"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/marginLeft"
+            android:layout_marginTop="@dimen/marginTop"
+            android:layout_marginBottom="@dimen/marginBottom"
             android:layout_below="@id/title"
             android:id="@+id/artis"
             />
@@ -75,27 +75,27 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/marginLeftFill"
+            android:layout_marginTop="@dimen/marginTop"
             android:layout_toRightOf="@id/artis"
-            android:textSize="20sp" />
+            android:textSize="@dimen/textSize" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/gambar"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
+            android:textSize="@dimen/textSize"
+            android:layout_marginTop="@dimen/marginTopTextView"
             android:id="@+id/title"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Status :"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:textSize="@dimen/textSize"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:textStyle="bold"
             android:layout_below="@id/deskription"
             android:id="@+id/setatus"/>
@@ -103,10 +103,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:layout_toRightOf="@id/setatus"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeftFill"
             android:layout_below="@id/deskription"
             android:id="@+id/status"/>
 
@@ -114,19 +114,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Category :"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/textSize"
+            android:layout_marginBottom="@dimen/marginBottom"
             android:textStyle="bold"
-            android:layout_marginLeft="100px"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:layout_below="@+id/status"
             android:id="@+id/kategori"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:textSize="@dimen/textSize"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:layout_below="@id/kategori"
             android:id="@+id/category"/>
 
@@ -134,9 +134,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Created :"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:textSize="@dimen/textSize"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:textStyle="bold"
             android:layout_below="@id/category"
             android:id="@+id/dibuat"/>
@@ -144,10 +144,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:layout_toRightOf="@id/dibuat"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeftFill"
             android:layout_below="@id/category"
             android:id="@+id/created"/>
 
@@ -156,75 +156,75 @@
             android:layout_height="wrap_content"
             android:text="Last Chapter Date :"
             android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:textSize="@dimen/textSize"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:layout_below="@id/dibuat"
             android:id="@+id/tanggalBab"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:layout_below="@id/tanggalBab"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:id="@+id/chapterDate"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/marginBottom"
             android:text="Total Chapter : "
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:textStyle="bold"
             android:layout_below="@id/chapterDate"
             android:id="@+id/jumlahChapter"
-            android:layout_marginLeft="100px"
+            android:layout_marginLeft="@dimen/marginLeft"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:layout_toRightOf="@id/jumlahChapter"
             android:layout_below="@id/chapterDate"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeftFill"
             android:id="@+id/totalChapter"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chapter : "
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:layout_below="@id/jumlahChapter"
             android:textStyle="bold"
             android:id="@+id/bab"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             />
 
         <Spinner
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/spinnerWidth"
+            android:layout_height="@dimen/spinnerHeight"
             android:id="@+id/chapter"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100px"
+            android:layout_marginBottom="@dimen/marginBottom"
+            android:layout_marginLeft="@dimen/marginLeft"
             android:layout_below="@id/bab"/>
 
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/spinnerHeight"
             android:text="Read"
             android:layout_alignParentRight="true"
             android:textStyle="italic"
-            android:textSize="20sp"
+            android:textSize="@dimen/textSize"
             android:layout_below="@id/bab"
             android:layout_toRightOf="@id/chapter"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="@dimen/marginRight"
             android:id="@+id/read"
             />
     </RelativeLayout>

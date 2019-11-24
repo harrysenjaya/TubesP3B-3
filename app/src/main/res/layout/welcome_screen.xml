@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/imageHeightWelcome"
+        android:layout_marginTop="@dimen/marginTopWelcome"
+        android:src="@drawable/cidori"
+        android:id="@+id/sasuke"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/marginTopImage"
+        android:layout_height="@dimen/spinnerWidth"
+        android:src="@drawable/manga"
+        android:id="@+id/tulisanManga"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/heightWelcome"
+        android:layout_marginTop="@dimen/heightWelcome"
+        android:src="@drawable/naruto"
+        android:id="@+id/naruto"/>
+
+</RelativeLayout>

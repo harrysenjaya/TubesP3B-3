@@ -6,42 +6,41 @@
 
     <ImageView
         android:id="@+id/image_grid"
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        app:srcCompat="@color/colorAccent"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_width="@dimen/imageWidth"
+        android:layout_height="@dimen/spinnerWidth"
+        android:layout_marginLeft="@dimen/marginLeftGrid"
+        android:layout_marginTop="@dimen/marginTop"/>
 
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="@dimen/imageWidth"
+        android:layout_height="@dimen/textViewHeight"
+        android:textSize="@dimen/textSizeGrid"
+        android:layout_marginTop="@dimen/marginBottom"
+        android:layout_marginBottom="@dimen/marginBottom"
         android:layout_below="@id/image_grid"
         android:textStyle="italic"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="@dimen/marginLeftGrid"
         android:id="@+id/titleGrid"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="@dimen/marginTopGrid"
+        android:layout_marginBottom="@dimen/marginTopGrid"
         android:text="Status : "
         android:layout_below="@id/titleGrid"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="@dimen/marginLeftGrid"
         android:id="@+id/setatusGrid"
         android:textStyle="bold"
-        android:textSize="15sp"/>
+        android:textSize="@dimen/textSizeGrid"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15sp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:textSize="@dimen/textSizeGrid"
+        android:layout_marginLeft="@dimen/marginTopGrid"
+        android:layout_marginTop="@dimen/marginTopGrid"
+        android:layout_marginBottom="@dimen/marginTopGrid"
         android:layout_toRightOf="@+id/setatusGrid"
         android:layout_below="@id/titleGrid"
         android:id="@+id/statusGrid"/>
@@ -49,23 +48,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="25dp"
+        android:layout_marginTop="@dimen/marginTopGrid"
+        android:layout_marginBottom="@dimen/marginTopGrid"
+        android:layout_marginLeft="@dimen/marginLeftGrid"
         android:text="Last Chapter Date :"
         android:layout_below="@id/statusGrid"
         android:textStyle="bold"
         android:id="@+id/tanggalBabGrid"
-        android:textSize="15sp"/>
+        android:textSize="@dimen/textSizeGrid"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_marginLeft="@dimen/marginLeftGrid"
         android:id="@+id/chapterDateGrid"
-        android:textSize="15sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="20dp"
+        android:textSize="@dimen/textSizeGrid"
+        android:layout_marginTop="@dimen/marginTopGrid"
+        android:layout_marginBottom="@dimen/marginTop"
         android:layout_below="@id/tanggalBabGrid" />
 
 </RelativeLayout>

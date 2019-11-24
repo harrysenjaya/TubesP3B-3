@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textSize">20sp</dimen>
+    <dimen name="marginBottom">10dp</dimen>
+    <dimen name="marginTop">20dp</dimen>
+    <dimen name="marginBottomImage">20dp</dimen>
+    <dimen name="marginLeft">100px</dimen>
+    <dimen name="imageWidth">150dp</dimen>
+    <dimen name="imageHeight">150dp</dimen>
+    <dimen name="textViewWidth">330dp</dimen>
+    <dimen name="marginLeftFill">10dp</dimen>
+    <dimen name="marginTopTextView">10dp</dimen>
+    <dimen name="spinnerWidth">200dp</dimen>
+    <dimen name="spinnerHeight">50dp</dimen>
+    <dimen name="marginRight">30px</dimen>
+
+
+
+    <dimen name="marginLeftGrid">25dp</dimen>
+    <dimen name="textViewHeight">60dp</dimen>
+    <dimen name="textSizeGrid">15sp</dimen>
+    <dimen name="marginTopGrid">5dp</dimen>
+
+
+    <dimen name="spinnerHeightFragment">50dp</dimen>
+
+    <dimen name="imageHeightWelcome">300dp</dimen>
+    <dimen name="marginTopWelcome">-35dp</dimen>
+    <dimen name="marginTopImage">220dp</dimen>
+    <dimen name="heightWelcome">400dp</dimen>
+</resources>
