@@ -106,12 +106,18 @@ public class MainFragment extends Fragment {
             }
         });
 
+        this.presenter.changePage(1);
+
     }
 
     public void mangaInfo(int id, String idManga){
         this.presenter.getMangaInfo(idManga);
         this.presenter.changePage(id);
     }
+
+
+
+
 
 
 }
