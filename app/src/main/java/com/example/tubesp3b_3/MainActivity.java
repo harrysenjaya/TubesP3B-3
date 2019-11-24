@@ -1,7 +1,6 @@
 package com.example.tubesp3b_3;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -81,17 +80,17 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
 
     @Override
     public void getMangaList(ArrayList<Manga> manga) {
-        mainFragment.Create(manga);
+        mainFragment.create(manga);
     }
 
     @Override
     public void getMangaInfo(MangaInfo manga) {
-      detailFragment.Create(manga);
+      detailFragment.create(manga);
     }
 
     @Override
     public void getMangaPage(ArrayList<String> manga) {
-        mangaFragment.Create(manga);
+        mangaFragment.create(manga);
     }
 
 }

@@ -1,26 +1,19 @@
 package com.example.tubesp3b_3;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,14 +64,14 @@ public class MainFragment extends Fragment {
         return view;
     }
 
-    public void Create(ArrayList<Manga> manga){
+    public void create(ArrayList<Manga> manga){
         GridAdapter adapter = new GridAdapter(this.getActivity(), manga);
         grid.setAdapter(adapter);
 
         adapter.setOnItemClick(new OnItemClick() {
             @Override
             public void onItemClick(Manga manga) {
-                MangaInfo(2, manga.getId());
+                mangaInfo(2, manga.getId());
             }
         });
 
@@ -114,7 +107,7 @@ public class MainFragment extends Fragment {
 
     }
 
-    public void MangaInfo(int id, String idManga){
+    public void mangaInfo(int id, String idManga){
         this.presenter.getMangaInfo(idManga);
         this.presenter.changePage(id);
     }

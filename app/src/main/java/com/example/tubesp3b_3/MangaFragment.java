@@ -57,7 +57,7 @@ public class MangaFragment extends Fragment {
         return view;
     }
 
-    public void Create(ArrayList<String> manga){
+    public void create(ArrayList<String> manga){
         SliderAdapter adapter = new SliderAdapter(this.getContext(),manga);
         sliderView.setSliderAdapter(adapter);    }
 }
