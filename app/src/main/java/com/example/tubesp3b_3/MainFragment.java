@@ -67,6 +67,7 @@ public class MainFragment extends Fragment {
     public void create(ArrayList<Manga> manga){
         GridAdapter adapter = new GridAdapter(this.getActivity(), manga);
         grid.setAdapter(adapter);
+        adapter.sortByAtoZ();
 
         adapter.setOnItemClick(new OnItemClick() {
             @Override
