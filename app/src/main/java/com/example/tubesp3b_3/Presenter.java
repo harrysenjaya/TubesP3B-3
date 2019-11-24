@@ -189,6 +189,4 @@ public class Presenter {
         this.iMainActivity.getMangaPage(manga);
     }
 
-
-
 }

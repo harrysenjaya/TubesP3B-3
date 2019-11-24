@@ -113,5 +113,4 @@ public class MainFragment extends Fragment {
         this.presenter.changePage(id);
     }
 
-
 }
