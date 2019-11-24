@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
     FragmentManager fragmentManager;
     Presenter presenter;
     MangaFragment mangaFragment;
+    FragmentWelcome welcomeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         this.mainFragment = MainFragment.newInstance("title",this.presenter);
         this.detailFragment = DetailFragment.newInstance("DetailFragment",this.presenter);
         this.mangaFragment = MangaFragment.newInstance("MangaFragment", this.presenter);
+        this.welcomeFragment = FragmentWelcome.newInstance("WelcomeFragment", this.presenter);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.container, this.mainFragment).commit();
