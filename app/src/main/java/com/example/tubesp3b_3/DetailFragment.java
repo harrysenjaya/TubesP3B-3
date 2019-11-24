@@ -21,7 +21,6 @@ import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class DetailFragment extends Fragment{
 
@@ -91,7 +90,7 @@ public class DetailFragment extends Fragment{
         return view;
     }
 
-    public void Create(MangaInfo manga){
+    public void create(MangaInfo manga){
         if(!manga.getImage().equals("")) {
             Glide.with(this).load("https://cdn.mangaeden.com/mangasimg/" + manga.getImage()).into(gambar);
         }
@@ -144,13 +143,15 @@ public class DetailFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 int index = chapter.getSelectedItemPosition();
-                Read(manga.getChapter().get(index).getId());
+                if(index>=0) {
+                    read(manga.getChapter().get(index).getId());
+                }
             }
         });
 
     }
 
-    public void Read(String id){
+    public void read(String id){
         this.presenter.getMangaPage(id);
         this.presenter.changePage(3);
     }
