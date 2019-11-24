@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         this.mangaFragment = MangaFragment.newInstance("MangaFragment", this.presenter);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
-        changePage(1);
-
+        ft.add(R.id.container, this.mainFragment).commit();
     }
 
     @Override

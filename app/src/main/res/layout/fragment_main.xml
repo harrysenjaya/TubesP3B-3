@@ -14,6 +14,7 @@
         android:queryHint="Search here"
         android:iconifiedByDefault="false"
         android:clickable="true"
+        android:layout_toLeftOf="@+id/sortSpinner"
         ></SearchView>
 
     <Spinner
