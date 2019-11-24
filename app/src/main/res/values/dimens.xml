@@ -24,8 +24,8 @@
 
     <dimen name="spinnerHeightFragment">50dp</dimen>
 
-    <dimen name="imageHeightWelcome">300dp</dimen>
-    <dimen name="marginTopImage">240dp</dimen>
+
+    <dimen name="marginTopImage">300dp</dimen>
     <dimen name="heightWelcome">400dp</dimen>
     <dimen name="marginLeftAtas">-190dp</dimen>
     <dimen name="marginLeftBawah">145dp</dimen>
