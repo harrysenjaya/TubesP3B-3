@@ -25,7 +25,7 @@ import java.util.Collections;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainFragment extends Fragment  {
+public class MainFragment extends Fragment {
 
     @BindView(R.id.gridView)
     GridView grid;
@@ -65,15 +65,6 @@ public class MainFragment extends Fragment  {
         ButterKnife.bind(this, view);
         fragmentManager = this.getActivity().getSupportFragmentManager();
         ft = fragmentManager.beginTransaction();
-
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-
-            @Override
-           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MangaInfo(2,position);
-            }
-        });
-
         this.et_Search.setEnabled(false);
         this.presenter.getMangaList();
 
@@ -84,25 +75,25 @@ public class MainFragment extends Fragment  {
         GridAdapter adapter = new GridAdapter(this.getActivity(), manga);
         grid.setAdapter(adapter);
 
+        adapter.setOnItemClick(new OnItemClick() {
+            @Override
+            public void onItemClick(Manga manga) {
+                MangaInfo(2, manga.getId());
+            }
+        });
+
         this.btn_Sort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String text = spinnerSort.getSelectedItem().toString();
-
                 if(text.equals("Hits")){
-                    presenter.sortByHits(manga);
-                    GridAdapter adapter1 = new GridAdapter(getActivity(), manga);
-                    grid.setAdapter(adapter1);
+                    adapter.sortByHits();
                 }
                 else if(text.equals("A - Z")){
-                    presenter.sortByAtoZ(manga);
-                    GridAdapter adapter1 = new GridAdapter(getActivity(), manga);
-                    grid.setAdapter(adapter1);
+                    adapter.sortByAtoZ();
                 }
                 else{
-                    presenter.sortByZtoA(manga);
-                    GridAdapter adapter1 = new GridAdapter(getActivity(), manga);
-                    grid.setAdapter(adapter1);
+                    adapter.sortByZtoA();
                 }
             }
         });
@@ -115,18 +106,18 @@ public class MainFragment extends Fragment  {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                ArrayList<Manga> temp = presenter.searchManga(newText);
-                GridAdapter adapter2 = new GridAdapter(getActivity(), temp);
-                grid.setAdapter(adapter2);
+                ArrayList<Manga> temp = adapter.searchManga(newText);
+                adapter.setItem(temp);
                 return false;
             }
         });
 
     }
 
-    public void MangaInfo(int id, int position){
-        this.presenter.getMangaInfo(position);
+    public void MangaInfo(int id, String idManga){
+        this.presenter.getMangaInfo(idManga);
         this.presenter.changePage(id);
     }
+
 
 }

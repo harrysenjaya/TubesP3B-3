@@ -12,19 +12,27 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 
 class GridAdapter extends BaseAdapter {
 
-    protected Context context;
-    protected ArrayList<Manga> manga;
-    protected LayoutInflater inflater;
-
+    private Context context;
+    private ArrayList<Manga> original;
+    private ArrayList<Manga> manga;
+    private LayoutInflater inflater;
+    private OnItemClick onItemClick;
 
     public GridAdapter(Context context, ArrayList<Manga> manga) {
         this.context = context;
+        this.original = manga;
         this.manga = manga;
+    }
+
+    public void setItem(ArrayList<Manga> manga){
+        this.manga = manga;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -51,6 +59,13 @@ class GridAdapter extends BaseAdapter {
             convertView=inflater.inflate(R.layout.fragment_grid_item,null);
         }
 
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClick.onItemClick(manga.get(position));
+            }
+        });
+
         ImageView imageView=convertView.findViewById(R.id.image_grid);
         TextView title=convertView.findViewById(R.id.titleGrid);
         TextView status = convertView.findViewById(R.id.statusGrid);
@@ -75,5 +90,43 @@ class GridAdapter extends BaseAdapter {
         }
 
         return convertView;
+    }
+
+    public void setOnItemClick(OnItemClick onItemClick){
+        this.onItemClick = onItemClick;
+    }
+
+    public ArrayList<Manga> sortByAtoZ(){
+        Collections.sort(manga, Manga.atoZComparator);
+        notifyDataSetChanged();
+        return manga;
+    }
+
+    public ArrayList<Manga> sortByZtoA(){
+        Collections.sort(manga, Manga.ztoAComparator);
+        notifyDataSetChanged();
+        return manga;
+    }
+
+    public ArrayList<Manga> sortByHits(){
+        Collections.sort(manga, Manga.hitsComparator);
+        notifyDataSetChanged();
+        return manga;
+    }
+
+    public ArrayList<Manga> searchManga(String title){
+        this.manga = this.original;
+        ArrayList<Manga> newArr = new ArrayList<>();
+        int count = title.length();
+
+        for(int i=0; i<manga.size();i++){
+            if(manga.get(i).getTitle().length()>=count) {
+                if (manga.get(i).getTitle().substring(0, title.length()).equalsIgnoreCase(title)) {
+                    newArr.add(manga.get(i));
+                }
+            }
+        }
+
+        return newArr;
     }
 }

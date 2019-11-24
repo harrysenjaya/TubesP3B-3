@@ -24,7 +24,6 @@ import java.util.Date;
 public class Presenter {
     private IMainActivity iMainActivity;
     private Context context;
-    private ArrayList<Manga> manga;
 
     protected final String BASE_URL = "https://www.mangaeden.com/api/";
 
@@ -80,9 +79,8 @@ public class Presenter {
 
     }
 
-    public void getMangaInfo(int position){
+    public void getMangaInfo(String id){
         RequestQueue queue = Volley.newRequestQueue(context);
-        String id = this.manga.get(position).getId();
         String url =BASE_URL+"manga/"+id;
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url,null, new Response.Listener<JSONObject>() {
             @Override
@@ -180,7 +178,6 @@ public class Presenter {
     }
 
     public void sendMangaList(ArrayList<Manga> manga){
-        this.manga = this.sortByAtoZ(manga);
         this.iMainActivity.getMangaList(manga);
     }
 
@@ -192,33 +189,6 @@ public class Presenter {
         this.iMainActivity.getMangaPage(manga);
     }
 
-    public ArrayList<Manga> sortByAtoZ(ArrayList<Manga> manga){
-        Collections.sort(manga, Manga.atoZComparator);
-        return manga;
-    }
 
-    public ArrayList<Manga> sortByZtoA(ArrayList<Manga> manga){
-        Collections.sort(manga, Manga.ztoAComparator);
-        return manga;
-    }
-
-    public ArrayList<Manga> sortByHits(ArrayList<Manga> manga){
-        Collections.sort(manga, Manga.hitsComparator);
-        return manga;
-    }
-
-    public ArrayList<Manga> searchManga(String title){
-        ArrayList<Manga> newArr = new ArrayList<>();
-        int count = title.length();
-
-        for(int i=0; i<manga.size();i++){
-            if(manga.get(i).getTitle().length()>=count) {
-                if (manga.get(i).getTitle().substring(0, title.length()).equalsIgnoreCase(title)) {
-                    newArr.add(manga.get(i));
-                }
-            }
-        }
-        return newArr;
-    }
 
 }
