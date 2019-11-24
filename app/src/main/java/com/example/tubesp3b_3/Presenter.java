@@ -2,6 +2,7 @@ package com.example.tubesp3b_3;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.ListView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,6 +25,7 @@ public class Presenter {
     private IMainActivity iMainActivity;
     private Context context;
     private ArrayList<Manga> manga;
+
     protected final String BASE_URL = "https://www.mangaeden.com/api/";
 
     public Presenter(IMainActivity iMainActivity, Context context){
@@ -205,4 +207,23 @@ public class Presenter {
         Collections.sort(manga, Manga.hitsComparator);
         return manga;
     }
+
+    public ArrayList<Manga> searchManga(String title){
+        ArrayList<Manga> newArr = new ArrayList();
+        for(int i=0; i<manga.size();i++){
+            int count = title.toLowerCase().length();
+            if(manga.get(i).getTitle().substring(0,title.length()).equals(title));
+            newArr.add(manga.get(i));
+        }
+        return newArr;
+    }
+
+    /*public ArrayList<String> search(){
+        ArrayList<String> listManga = new ArrayList<>();
+        for(int i=0; i<manga.size();i++){
+            listManga.add(i, manga.get(i).getTitle());
+        }
+        return listManga;
+    }*/
+
 }

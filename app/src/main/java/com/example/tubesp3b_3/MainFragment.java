@@ -1,20 +1,25 @@
 package com.example.tubesp3b_3;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SearchView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +37,8 @@ public class MainFragment extends Fragment  {
 
     @BindView(R.id.sortSpinner)
     Spinner spinnerSort;
+
+
 
     private FragmentManager fragmentManager;
     private FragmentTransaction ft;
@@ -67,13 +74,18 @@ public class MainFragment extends Fragment  {
                 MangaInfo(2,position);
             }
         });
+
+        this.et_Search.setEnabled(false);
         this.presenter.getMangaList();
+
+
         return view;
     }
 
     public void Create(ArrayList<Manga> manga){
         GridAdapter adapter = new GridAdapter(this.getActivity(), manga);
         grid.setAdapter(adapter);
+
 
         this.btn_Sort.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +110,19 @@ public class MainFragment extends Fragment  {
             }
         });
 
+        et_Search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                GridAdapter adapter2 = new GridAdapter(getActivity(), presenter.searchManga(newText));
+                grid.setAdapter(adapter2);
+                return false;
+            }
+        });
 
     }
 
@@ -105,4 +130,5 @@ public class MainFragment extends Fragment  {
         this.presenter.getMangaInfo(position);
         this.presenter.changePage(id);
     }
+
 }

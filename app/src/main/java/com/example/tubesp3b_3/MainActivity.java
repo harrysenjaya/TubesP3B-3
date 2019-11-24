@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
         this.mangaFragment = MangaFragment.newInstance("MangaFragment", this.presenter);
         this.fragmentManager = this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
-        ft.add(R.id.container, this.mainFragment).commit();
+        changePage(1);
 
     }
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements IMainActivity {
                 ft.show(this.mainFragment);
             }
             else{
-                ft.add(R.id.container,this.mainFragment);
+                ft.add(R.id.container,this.mainFragment).addToBackStack(null);
             }
             if(this.detailFragment.isAdded()){
                 ft.hide(this.detailFragment);
