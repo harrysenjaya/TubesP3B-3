@@ -60,7 +60,6 @@ public class MainFragment extends Fragment {
         ft = fragmentManager.beginTransaction();
         this.et_Search.setEnabled(false);
         this.presenter.getMangaList();
-
         return view;
     }
 
@@ -105,9 +104,6 @@ public class MainFragment extends Fragment {
                 return false;
             }
         });
-
-        this.presenter.changePage(1);
-
     }
 
     public void mangaInfo(int id, String idManga){
